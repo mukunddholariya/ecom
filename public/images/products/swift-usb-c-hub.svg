@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg-swift-usb-c-hub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132029"/>
+      <stop offset="100%" stop-color="#223542"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="600" fill="url(#bg-swift-usb-c-hub)"/>
+
+  <!-- Subtle Decorative Grid / Tech Accent -->
+  <circle cx="300" cy="300" r="220" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.15"/>
+  <circle cx="300" cy="300" r="160" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.2"/>
+
+  <!-- Product Vector Illustration -->
+  
+      <!-- Cable -->
+      <path d="M 300 120 C 300 170, 300 180, 300 230" fill="none" stroke="#64748b" stroke-width="12" stroke-linecap="round"/>
+      <!-- Type-C Connector -->
+      <rect x="286" y="90" width="28" height="40" rx="8" fill="#94a3b8"/>
+      <!-- Hub Body -->
+      <rect x="230" y="230" width="140" height="260" rx="20" fill="#1e293b" stroke="#38bdf8" stroke-width="4"/>
+      <!-- HDMI Port -->
+      <rect x="255" y="260" width="90" height="18" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+      <!-- 3x USB Ports -->
+      <rect x="255" y="300" width="90" height="20" rx="4" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+      <rect x="255" y="335" width="90" height="20" rx="4" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+      <rect x="255" y="370" width="90" height="20" rx="4" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+      <!-- SD Card Slots -->
+      <rect x="255" y="415" width="50" height="8" rx="2" fill="#0f172a"/>
+      <rect x="255" y="435" width="35" height="6" rx="2" fill="#0f172a"/>
+    
+
+  <!-- Lower Branding Overlay -->
+  <rect y="490" width="600" height="110" fill="#020617" opacity="0.6"/>
+  <text x="40" y="535" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0ea5e9" letter-spacing="2" text-transform="uppercase">Electronics</text>
+  <text x="40" y="568" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Swift USB-C Hub 7-in-1</text>
+</svg>

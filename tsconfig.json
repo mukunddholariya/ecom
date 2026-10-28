@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@tanstack/query-core": [
+        "./node_modules/.pnpm/@tanstack+query-core@5.105.0/node_modules/@tanstack/query-core"
+      ]
     }
   },
   "include": [

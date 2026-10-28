@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ban-01",
+    "title": "Up to 40% Off Electronics",
+    "subtitle": "Earbuds, smartwatches, and accessories — limited stock.",
+    "cta": "Shop Now",
+    "href": "/products?category=electronics",
+    "imageUrl": "/images/banners/banner-electronics.svg",
+    "theme": "dark",
+    "accentClass": "bg-cta text-cta-foreground hover:bg-cta/90"
+  },
+  {
+    "id": "ban-02",
+    "title": "New Season Fashion",
+    "subtitle": "Kurtas, tees, and sneakers refreshed for the new season.",
+    "cta": "Explore Collection",
+    "href": "/products?category=fashion",
+    "imageUrl": "/images/banners/banner-fashion.svg",
+    "theme": "dark",
+    "accentClass": "bg-primary text-primary-foreground hover:bg-primary/90"
+  },
+  {
+    "id": "ban-03",
+    "title": "Home Essentials",
+    "subtitle": "Cast iron cookware, bamboo storage, and more for your home.",
+    "cta": "Shop Home",
+    "href": "/products?category=home-kitchen",
+    "imageUrl": "/images/banners/banner-home.svg",
+    "theme": "dark",
+    "accentClass": "bg-cta text-cta-foreground hover:bg-cta/90"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "user-01",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "phone": "9876543210",
+    "otp": "123456"
+  },
+  {
+    "id": "user-02",
+    "name": "Rahul Mehta",
+    "email": "rahul.mehta@example.com",
+    "phone": "9123456780",
+    "otp": "123456"
+  }
+]

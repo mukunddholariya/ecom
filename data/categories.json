@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cat-01",
+    "slug": "electronics",
+    "name": "Electronics",
+    "icon": "smartphone",
+    "description": "Phones, laptops, earphones, and gadgets"
+  },
+  {
+    "id": "cat-02",
+    "slug": "fashion",
+    "name": "Fashion",
+    "icon": "shirt",
+    "description": "Kurtas, T-shirts, jeans, shoes, and accessories"
+  },
+  {
+    "id": "cat-03",
+    "slug": "home-kitchen",
+    "name": "Home & Kitchen",
+    "icon": "home",
+    "description": "Cookware, storage, décor, and appliances"
+  },
+  {
+    "id": "cat-04",
+    "slug": "beauty",
+    "name": "Beauty & Care",
+    "icon": "sparkles",
+    "description": "Skincare, grooming, and personal care essentials"
+  },
+  {
+    "id": "cat-05",
+    "slug": "sports",
+    "name": "Sports & Fitness",
+    "icon": "dumbbell",
+    "description": "Equipment, activewear, and outdoor gear"
+  }
+]
