@@ -1,15 +1,26 @@
 "use client"
 
-import { useState, useMemo, useCallback } from "react"
-import { useRouter } from "next/navigation"
-import { ShoppingCart, Zap, Check, ShieldCheck, RotateCcw, Truck } from "lucide-react"
-import type { Product, ProductVariant } from "@/types/product"
+import { PincodeChecker } from "@/components/product/pincode-checker"
 import { PriceDisplay } from "@/components/product/price-display"
-import { RatingBadge } from "@/components/product/rating-badge"
 import { QuantitySelector } from "@/components/product/quantity-selector"
+import { RatingBadge } from "@/components/product/rating-badge"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/hooks/use-cart"
+import { useWishlist } from "@/hooks/use-wishlist"
+import { formatPrice } from "@/lib/format"
 import { cn } from "@/lib/utils"
+import type { Product, ProductVariant } from "@/types/product"
+import {
+  Check,
+  Heart,
+  Layers,
+  ShieldCheck,
+  ShoppingCart,
+  Sparkles,
+  Zap,
+} from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useCallback, useMemo, useState } from "react"
 
 interface ProductDetailsClientProps {
   product: Product
@@ -18,13 +29,18 @@ interface ProductDetailsClientProps {
 export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
   const router = useRouter()
   const { addItem } = useCart()
+  const { isWishlisted, toggleWishlist } = useWishlist()
 
   // Variant handling
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | undefined>(
-    product.variants && product.variants.length > 0 ? product.variants[0] : undefined,
+  const [selectedVariant, setSelectedVariant] = useState<
+    ProductVariant | undefined
+  >(
+    product.variants && product.variants.length > 0
+      ? product.variants[0]
+      : undefined
   )
 
-  // Stock for current variant or base product
+  // Stock & Price for current variant or base product
   const currentStock = useMemo(() => {
     if (selectedVariant && typeof selectedVariant.stock === "number") {
       return selectedVariant.stock
@@ -32,17 +48,36 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
     return product.stock
   }, [selectedVariant, product.stock])
 
+  const currentPrice = useMemo(() => {
+    if (selectedVariant && typeof selectedVariant.price === "number") {
+      return selectedVariant.price
+    }
+    return product.price
+  }, [selectedVariant, product.price])
+
+  const currentOriginalPrice = useMemo(() => {
+    if (selectedVariant && typeof selectedVariant.originalPrice === "number") {
+      return selectedVariant.originalPrice
+    }
+    return product.originalPrice
+  }, [selectedVariant, product.originalPrice])
+
   // Quantity bounded by stock
   const [quantity, setQuantity] = useState(1)
   const [isAdded, setIsAdded] = useState(false)
 
+  const wishlisted = isWishlisted(product.id)
+
   // Ensure quantity does not exceed stock when switching variants
-  const handleVariantSelect = useCallback((v: ProductVariant) => {
-    setSelectedVariant(v)
-    if (quantity > v.stock) {
-      setQuantity(Math.max(1, v.stock))
-    }
-  }, [quantity])
+  const handleVariantSelect = useCallback(
+    (v: ProductVariant) => {
+      setSelectedVariant(v)
+      if (quantity > v.stock) {
+        setQuantity(Math.max(1, v.stock))
+      }
+    },
+    [quantity]
+  )
 
   const handleAddToCart = useCallback(() => {
     if (currentStock <= 0) return
@@ -52,16 +87,25 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
         productId: product.id,
         slug: product.slug,
         name: product.name,
-        image: product.images[0] ?? "",
-        price: product.price,
+        image: selectedVariant?.image || product.images[0] || "",
+        price: currentPrice,
+        originalPrice: currentOriginalPrice,
         variantLabel: selectedVariant ? selectedVariant.label : undefined,
       },
-      quantity,
+      quantity
     )
 
     setIsAdded(true)
     setTimeout(() => setIsAdded(false), 1800)
-  }, [addItem, product, selectedVariant, quantity, currentStock])
+  }, [
+    addItem,
+    product,
+    selectedVariant,
+    quantity,
+    currentStock,
+    currentPrice,
+    currentOriginalPrice,
+  ])
 
   const handleBuyNow = useCallback(() => {
     if (currentStock <= 0) return
@@ -71,26 +115,58 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
         productId: product.id,
         slug: product.slug,
         name: product.name,
-        image: product.images[0] ?? "",
-        price: product.price,
+        image: selectedVariant?.image || product.images[0] || "",
+        price: currentPrice,
+        originalPrice: currentOriginalPrice,
         variantLabel: selectedVariant ? selectedVariant.label : undefined,
       },
-      quantity,
+      quantity
     )
 
     router.push("/cart")
-  }, [addItem, product, selectedVariant, quantity, currentStock, router])
+  }, [
+    addItem,
+    product,
+    selectedVariant,
+    quantity,
+    currentStock,
+    currentPrice,
+    currentOriginalPrice,
+    router,
+  ])
 
   const isLowStock = currentStock > 0 && currentStock <= 5
   const isOutOfStock = currentStock <= 0
 
   return (
     <div className="flex flex-col space-y-6">
-      {/* Brand & Title */}
+      {/* Brand, Title & Wishlist */}
       <div>
-        <span className="text-xs font-bold uppercase tracking-widest text-primary">
-          {product.brand}
-        </span>
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-xs font-bold tracking-widest text-primary uppercase">
+            {product.brand}
+          </span>
+
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => toggleWishlist(product.id)}
+            className={cn(
+              "h-8 gap-1.5 border-border text-xs font-medium transition",
+              wishlisted && "border-cta/40 bg-cta/10 text-cta hover:bg-cta/20"
+            )}
+          >
+            <Heart
+              className={cn(
+                "size-3.5 transition-colors",
+                wishlisted && "fill-cta text-cta"
+              )}
+            />
+            <span>{wishlisted ? "Wishlisted" : "Wishlist"}</span>
+          </Button>
+        </div>
+
         <h1 className="mt-1.5 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
           {product.name}
         </h1>
@@ -103,8 +179,8 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
             size="md"
           />
           <span className="text-xs text-muted-foreground">|</span>
-          <span className="text-xs font-mono text-muted-foreground">
-            SKU: {product.sku}
+          <span className="font-mono text-xs text-muted-foreground">
+            SKU: {selectedVariant?.sku || product.sku}
           </span>
         </div>
       </div>
@@ -112,28 +188,28 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
       {/* Price Section */}
       <div className="rounded-xl border border-border/80 bg-muted/20 p-4">
         <PriceDisplay
-          price={product.price}
-          originalPrice={product.originalPrice}
+          price={currentPrice}
+          originalPrice={currentOriginalPrice}
           size="lg"
         />
         <p className="mt-1 text-xs text-muted-foreground">
-          Inclusive of all applicable taxes. Free shipping on this order.
+          Inclusive of all applicable taxes. Free delivery on orders over ₹499.
         </p>
       </div>
 
       {/* Stock Status */}
       <div className="flex items-center gap-2 text-xs font-medium">
         {isOutOfStock ? (
-          <span className="text-destructive font-semibold">
+          <span className="font-semibold text-destructive">
             ✕ Currently out of stock
           </span>
         ) : isLowStock ? (
-          <span className="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 font-semibold">
+          <span className="inline-flex items-center gap-1 font-semibold text-amber-600 dark:text-amber-400">
             ⚡ Only {currentStock} left in stock — order soon
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
-            ✓ In Stock ({currentStock} available)
+          <span className="inline-flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400">
+            ✓ In Stock ({currentStock} units available)
           </span>
         )}
       </div>
@@ -171,7 +247,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
                       "group relative flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all",
                       isSelected
                         ? "border-primary bg-primary/10 text-primary ring-2 ring-primary/30"
-                        : "border-border hover:border-primary/40 text-foreground",
+                        : "border-border text-foreground hover:border-primary/40"
                     )}
                   >
                     <span
@@ -195,7 +271,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
                     "min-w-10 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all",
                     isSelected
                       ? "border-primary bg-primary text-primary-foreground shadow-xs"
-                      : "border-border hover:border-primary/40 text-foreground bg-background",
+                      : "border-border bg-background text-foreground hover:border-primary/40"
                   )}
                 >
                   {variant.label}
@@ -221,7 +297,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
         </div>
 
         {/* Buttons Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+        <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2">
           {/* Add to Cart (Mango Orange CTA) */}
           <Button
             type="button"
@@ -231,7 +307,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
             onClick={handleAddToCart}
             className={cn(
               "w-full font-semibold shadow-xs transition-all",
-              isAdded && "bg-emerald-600 hover:bg-emerald-600 text-white",
+              isAdded && "bg-emerald-600 text-white hover:bg-emerald-600"
             )}
             aria-label={
               isAdded
@@ -241,12 +317,12 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
           >
             {isAdded ? (
               <>
-                <Check className="size-4 me-2" />
+                <Check className="me-2 size-4" />
                 Added to Cart ({quantity})
               </>
             ) : (
               <>
-                <ShoppingCart className="size-4 me-2" />
+                <ShoppingCart className="me-2 size-4" />
                 Add to Cart
               </>
             )}
@@ -261,31 +337,36 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
             onClick={handleBuyNow}
             className="w-full font-semibold shadow-xs"
           >
-            <Zap className="size-4 me-2" />
+            <Zap className="me-2 size-4" />
             Buy Now
           </Button>
         </div>
       </div>
 
-      {/* Honest Delivery & Guarantee Perks */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-xl border border-border bg-card p-3.5 text-xs text-muted-foreground shadow-2xs">
-        <div className="flex items-center gap-2">
-          <Truck className="size-4 text-primary shrink-0" />
-          <span>Free delivery in 2–4 days</span>
+      {/* Pincode Serviceability Estimator */}
+      <PincodeChecker />
+
+      {/* Highlights / Key Features (Part D & E) */}
+      {product.highlights && product.highlights.length > 0 && (
+        <div className="space-y-2.5 rounded-xl border border-border bg-card p-4">
+          <h3 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-foreground uppercase">
+            <Sparkles className="size-3.5 text-primary" />
+            Key Highlights
+          </h3>
+          <ul className="grid grid-cols-1 gap-2 text-xs text-muted-foreground sm:grid-cols-2">
+            {product.highlights.map((h, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="font-bold text-primary">•</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex items-center gap-2">
-          <RotateCcw className="size-4 text-primary shrink-0" />
-          <span>7-day easy returns</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <ShieldCheck className="size-4 text-primary shrink-0" />
-          <span>100% Genuine product</span>
-        </div>
-      </div>
+      )}
 
       {/* Description */}
-      <div className="border-t border-border/80 pt-5 space-y-2">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+      <div className="space-y-2 border-t border-border/80 pt-5">
+        <h3 className="text-sm font-semibold tracking-wider text-foreground uppercase">
           About This Product
         </h3>
         <p className="text-sm leading-relaxed text-muted-foreground">
@@ -293,10 +374,47 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
         </p>
       </div>
 
+      {/* Dynamic Category Specifications (Part D) */}
+      {product.specifications && product.specifications.length > 0 && (
+        <div className="space-y-3 border-t border-border/80 pt-5">
+          <h3 className="flex items-center gap-2 text-sm font-semibold tracking-wider text-foreground uppercase">
+            <Layers className="size-4 text-primary" />
+            Technical Specifications & Details
+          </h3>
+
+          <div className="divide-y divide-border/60 overflow-hidden rounded-xl border border-border text-xs">
+            {product.specifications.map((spec, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-3 bg-card p-3 transition-colors hover:bg-muted/20"
+              >
+                <span className="col-span-1 font-medium text-muted-foreground">
+                  {spec.name}
+                </span>
+                <span className="col-span-2 font-semibold text-foreground">
+                  {spec.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Warranty Information (Part D) */}
+      {product.warranty && (
+        <div className="flex items-center gap-2.5 rounded-xl border border-primary/20 bg-primary/5 p-3.5 text-xs text-foreground">
+          <ShieldCheck className="size-5 shrink-0 text-primary" />
+          <div>
+            <span className="block font-bold">Warranty & Guarantee:</span>
+            <span className="text-muted-foreground">{product.warranty}</span>
+          </div>
+        </div>
+      )}
+
       {/* Tags */}
       {product.tags && product.tags.length > 0 && (
         <div className="flex flex-wrap items-center gap-1.5 pt-2">
-          <span className="text-xs font-semibold text-muted-foreground me-1">
+          <span className="me-1 text-xs font-semibold text-muted-foreground">
             Tags:
           </span>
           {product.tags.map((tag) => (
@@ -309,7 +427,50 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
           ))}
         </div>
       )}
+
+      {/* Mobile Sticky Bottom Action Bar (Part C) */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-border bg-background/95 p-3 px-4 shadow-lg backdrop-blur-md md:hidden">
+        <div className="min-w-0">
+          <span className="block truncate text-xs text-muted-foreground">
+            {product.name}
+          </span>
+          <span className="text-base font-bold text-foreground">
+            {formatPrice(currentPrice)}
+          </span>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2">
+          <Button
+            type="button"
+            variant={isAdded ? "default" : "cta"}
+            size="sm"
+            disabled={isOutOfStock}
+            onClick={handleAddToCart}
+            className="text-xs font-semibold shadow-xs"
+          >
+            {isAdded ? (
+              <>
+                <Check className="me-1 size-3.5" /> Added
+              </>
+            ) : (
+              <>
+                <ShoppingCart className="me-1 size-3.5" /> Add to Cart
+              </>
+            )}
+          </Button>
+
+          <Button
+            type="button"
+            variant="default"
+            size="sm"
+            disabled={isOutOfStock}
+            onClick={handleBuyNow}
+            className="text-xs font-semibold"
+          >
+            <Zap className="me-1 size-3.5" /> Buy Now
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }
-

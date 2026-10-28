@@ -3,12 +3,13 @@
 import { useState, useCallback, type MouseEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingCart, Check } from "lucide-react"
+import { ShoppingCart, Check, Heart } from "lucide-react"
 import type { Product } from "@/types/product"
 import { PriceDisplay } from "@/components/product/price-display"
 import { RatingBadge } from "@/components/product/rating-badge"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/hooks/use-cart"
+import { useWishlist } from "@/hooks/use-wishlist"
 import { cn } from "@/lib/utils"
 
 interface ProductCardProps {
@@ -23,8 +24,20 @@ export function ProductCard({
   priority = false,
 }: ProductCardProps) {
   const { addItem } = useCart()
+  const { isWishlisted, toggleWishlist } = useWishlist()
   const [isAdded, setIsAdded] = useState(false)
   const [imageError, setImageError] = useState(false)
+
+  const wishlisted = isWishlisted(product.id)
+
+  const handleWishlistToggle = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault()
+      e.stopPropagation()
+      toggleWishlist(product.id)
+    },
+    [toggleWishlist, product.id],
+  )
 
   const handleAddToCart = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
@@ -87,6 +100,25 @@ export function ProductCard({
             </span>
           )}
         </div>
+
+        {/* Wishlist Toggle Button */}
+        <button
+          type="button"
+          onClick={handleWishlistToggle}
+          aria-label={
+            wishlisted
+              ? `Remove ${product.name} from wishlist`
+              : `Add ${product.name} to wishlist`
+          }
+          className={cn(
+            "absolute end-2.5 top-2.5 z-10 flex size-8 items-center justify-center rounded-full bg-background/80 backdrop-blur-xs transition hover:scale-110 shadow-xs",
+            wishlisted
+              ? "text-cta fill-cta"
+              : "text-muted-foreground hover:text-foreground",
+          )}
+        >
+          <Heart className={cn("size-4", wishlisted && "fill-cta")} />
+        </button>
       </Link>
 
       {/* Card Details */}

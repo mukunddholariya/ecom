@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingCart, Trash2, ArrowRight } from "lucide-react"
+import { ShoppingCart, Trash2, ArrowRight, Tag, X } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 import { formatPrice } from "@/lib/format"
 import { QuantitySelector } from "@/components/product/quantity-selector"
@@ -20,6 +20,8 @@ export function CartSheet() {
   const {
     cart,
     totals,
+    appliedCoupon,
+    removeCoupon,
     isCartSheetOpen,
     setIsCartSheetOpen,
     updateQuantity,
@@ -144,6 +146,23 @@ export function CartSheet() {
 
             {/* Footer Summary & Checkout */}
             <SheetFooter className="border-t border-border p-4 bg-muted/20 space-y-3">
+              {appliedCoupon && (
+                <div className="flex items-center justify-between rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs text-emerald-950 dark:text-emerald-200 w-full">
+                  <div className="flex items-center gap-1.5 font-medium truncate">
+                    <Tag className="size-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span>Coupon: <strong>{appliedCoupon.code}</strong></span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={removeCoupon}
+                    aria-label="Remove coupon"
+                    className="text-muted-foreground hover:text-destructive p-0.5"
+                  >
+                    <X className="size-3" />
+                  </button>
+                </div>
+              )}
+
               <div className="space-y-1.5 text-xs w-full">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Subtotal</span>
@@ -151,6 +170,15 @@ export function CartSheet() {
                     {formatPrice(totals.subtotal)}
                   </span>
                 </div>
+                {totals.couponDiscount && totals.couponDiscount > 0 ? (
+                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Tag className="size-3" />
+                      Coupon Discount ({totals.appliedCouponCode})
+                    </span>
+                    <span>-{formatPrice(totals.couponDiscount)}</span>
+                  </div>
+                ) : null}
                 <div className="flex justify-between text-muted-foreground">
                   <span>Estimated Delivery</span>
                   <span>

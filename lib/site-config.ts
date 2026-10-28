@@ -8,7 +8,7 @@ export const siteConfig = {
   name: "edom",
   tagline: "Everything. Delivered.",
   description:
-    "Shop the widest selection of electronics, fashion, home essentials, and more — all in one place.",
+    "Shop premium intimate protection, latex-free barriers, and personal gels designed for comfort and peace of mind.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const
 

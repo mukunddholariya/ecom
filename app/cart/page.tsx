@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, type FormEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -11,18 +12,64 @@ import {
   Truck,
   Sparkles,
   ChevronRight,
+  Tag,
+  Check,
+  X,
 } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 import { formatPrice } from "@/lib/format"
 import { QuantitySelector } from "@/components/product/quantity-selector"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export default function CartPage() {
-  const { cart, totals, isLoaded, updateQuantity, removeItem, clearCart } =
-    useCart()
+  const {
+    cart,
+    totals,
+    isLoaded,
+    updateQuantity,
+    removeItem,
+    clearCart,
+    appliedCoupon,
+    applyCoupon,
+    removeCoupon,
+  } = useCart()
+
+  const [couponInput, setCouponInput] = useState("")
+  const [couponFeedback, setCouponFeedback] = useState<{
+    type: "success" | "error"
+    message: string
+  } | null>(null)
+
+  const handleApplyCoupon = (e: FormEvent) => {
+    e.preventDefault()
+    if (!couponInput.trim()) return
+    const res = applyCoupon(couponInput.trim())
+    if (res.success) {
+      setCouponFeedback({ type: "success", message: res.message })
+      setCouponInput("")
+    } else {
+      setCouponFeedback({ type: "error", message: res.message })
+    }
+  }
+
+  const handleRemoveCoupon = () => {
+    removeCoupon()
+    setCouponFeedback(null)
+  }
+
+  const handleQuickApply = (code: string) => {
+    const res = applyCoupon(code)
+    if (res.success) {
+      setCouponFeedback({ type: "success", message: res.message })
+      setCouponInput("")
+    } else {
+      setCouponFeedback({ type: "error", message: res.message })
+    }
+  }
 
   if (!isLoaded) {
     return (
@@ -252,8 +299,110 @@ export default function CartPage() {
             </div>
           </div>
 
-          {/* Right Column: Order Summary */}
-          <div>
+          {/* Right Column: Order Summary & Coupons */}
+          <div className="space-y-4">
+            {/* Coupon Card */}
+            <Card className="border-border shadow-2xs">
+              <CardHeader className="p-3.5 pb-2">
+                <CardTitle className="text-xs font-bold flex items-center justify-between">
+                  <span className="flex items-center gap-1.5 text-foreground">
+                    <Tag className="size-3.5 text-primary" />
+                    Apply Coupon Code
+                  </span>
+                  {appliedCoupon && (
+                    <span className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
+                      Applied
+                    </span>
+                  )}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="p-3.5 pt-1 space-y-2.5">
+                {appliedCoupon ? (
+                  <div className="flex items-center justify-between rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-2.5 text-xs text-emerald-950 dark:text-emerald-200">
+                    <div className="space-y-0.5 min-w-0 pr-2">
+                      <div className="flex items-center gap-1.5 font-bold">
+                        <Check className="size-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <span>{appliedCoupon.code}</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground truncate">
+                        {appliedCoupon.description}
+                      </p>
+                    </div>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon-xs"
+                      onClick={handleRemoveCoupon}
+                      aria-label="Remove coupon"
+                      className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 shrink-0"
+                    >
+                      <X className="size-3.5" />
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleApplyCoupon} className="flex gap-2">
+                    <Input
+                      type="text"
+                      placeholder="e.g. SAVE10"
+                      value={couponInput}
+                      onChange={(e) => setCouponInput(e.target.value.toUpperCase())}
+                      className="h-8 text-xs font-mono uppercase tracking-wider"
+                    />
+                    <Button
+                      type="submit"
+                      variant="default"
+                      size="sm"
+                      className="h-8 text-xs px-3 font-semibold shrink-0"
+                      disabled={!couponInput.trim()}
+                    >
+                      Apply
+                    </Button>
+                  </form>
+                )}
+
+                {/* Feedback message */}
+                {couponFeedback && (
+                  <p
+                    className={`text-[11px] font-medium ${
+                      couponFeedback.type === "success"
+                        ? "text-emerald-600 dark:text-emerald-400"
+                        : "text-destructive"
+                    }`}
+                  >
+                    {couponFeedback.message}
+                  </p>
+                )}
+
+                {/* Quick available coupon pills */}
+                {!appliedCoupon && (
+                  <div className="pt-1 border-t border-border/60">
+                    <span className="text-[10px] text-muted-foreground block mb-1.5">
+                      Available Offers (Click to apply):
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {[
+                        { code: "SAVE10", desc: "10% OFF" },
+                        { code: "FIRST50", desc: "₹50 OFF" },
+                        { code: "DEAL100", desc: "₹100 OFF" },
+                        { code: "FREESHIP", desc: "FREE DELIVERY" },
+                      ].map((c) => (
+                        <button
+                          key={c.code}
+                          type="button"
+                          onClick={() => handleQuickApply(c.code)}
+                          className="rounded-md border border-dashed border-primary/40 bg-primary/5 px-2 py-0.5 text-[10px] font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1"
+                        >
+                          <span>{c.code}</span>
+                          <span className="text-muted-foreground font-normal">({c.desc})</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
             <Card className="sticky top-20 border-border shadow-2xs">
               <CardHeader className="border-b border-border/80 pb-3">
                 <CardTitle className="text-base font-bold">
@@ -285,6 +434,17 @@ export default function CartPage() {
                     )}
                   </span>
                 </div>
+
+                {/* Coupon discount line item */}
+                {totals.couponDiscount && totals.couponDiscount > 0 ? (
+                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Tag className="size-3" />
+                      Coupon Discount ({totals.appliedCouponCode})
+                    </span>
+                    <span>-{formatPrice(totals.couponDiscount)}</span>
+                  </div>
+                ) : null}
 
                 {/* Savings highlight if any */}
                 {totals.totalSavings > 0 && (

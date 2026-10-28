@@ -55,6 +55,7 @@ export const STORAGE_KEYS = {
   CART: "edom:cart",
   SESSION: "edom:session",
   RECENT_PRODUCTS: "edom:recent_products",
+  WISHLIST: "edom:wishlist",
   ORDERS: "edom:orders",
   ADDRESSES: "edom:addresses",
 } as const

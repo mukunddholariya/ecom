@@ -3,17 +3,19 @@
 import { useState, useCallback, type FormEvent } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ShoppingCart, User, Search, Menu, X } from "lucide-react"
+import { ShoppingCart, User, Search, Menu, X, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site-config"
 import { useCart } from "@/hooks/use-cart"
 import { useAuth } from "@/hooks/use-auth"
+import { useWishlist } from "@/hooks/use-wishlist"
 import { cn } from "@/lib/utils"
 
 export function Header() {
   const router = useRouter()
   const { totals, openCartSheet } = useCart()
   const { isSignedIn, session } = useAuth()
+  const { count: wishlistCount } = useWishlist()
   const [searchQuery, setSearchQuery] = useState("")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -27,11 +29,11 @@ export function Header() {
   )
 
   const navLinks = [
-    { label: "Electronics", href: "/products?category=electronics" },
-    { label: "Fashion", href: "/products?category=fashion" },
-    { label: "Home & Kitchen", href: "/products?category=home-kitchen" },
-    { label: "Beauty", href: "/products?category=beauty" },
-    { label: "Sports", href: "/products?category=sports" },
+    { label: "Ultra Thin", href: "/products?category=ultra-thin" },
+    { label: "Textured & Ribbed", href: "/products?category=textured-ribbed" },
+    { label: "Flavoured", href: "/products?category=flavoured" },
+    { label: "Latex-Free", href: "/products?category=latex-free" },
+    { label: "Lubricants", href: "/products?category=lubricants" },
   ]
 
   return (
@@ -81,6 +83,24 @@ export function Header() {
               {isSignedIn && (
                 <span className="hidden sm:inline max-w-24 truncate">
                   {session?.name.split(" ")[0]}
+                </span>
+              )}
+            </Link>
+          </Button>
+
+          {/* Wishlist */}
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            asChild
+            aria-label={`Wishlist, ${wishlistCount} items`}
+            className="relative"
+          >
+            <Link href="/wishlist">
+              <Heart className="size-5" />
+              {wishlistCount > 0 && (
+                <span className="absolute -end-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-cta text-[10px] font-bold text-cta-foreground shadow-xs">
+                  {wishlistCount > 9 ? "9+" : wishlistCount}
                 </span>
               )}
             </Link>
@@ -175,6 +195,23 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li className="border-t border-border/60 pt-1 mt-1">
+              <Link
+                href="/wishlist"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex h-10 items-center justify-between text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Heart className="size-4" />
+                  My Wishlist
+                </span>
+                {wishlistCount > 0 && (
+                  <span className="rounded-full bg-cta px-1.5 py-0.5 text-[10px] font-bold text-cta-foreground">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

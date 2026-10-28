@@ -1,9 +1,13 @@
 import Link from "next/link"
 import {
+  Shield,
+  Sparkles,
+  Heart,
+  Leaf,
+  Droplets,
   Smartphone,
   Shirt,
   Home,
-  Sparkles,
   Dumbbell,
   ShoppingBag,
   type LucideIcon,
@@ -17,10 +21,14 @@ interface CategoryStripProps {
 }
 
 const iconMap: Record<string, LucideIcon> = {
+  shield: Shield,
+  sparkles: Sparkles,
+  heart: Heart,
+  leaf: Leaf,
+  droplets: Droplets,
   smartphone: Smartphone,
   shirt: Shirt,
   home: Home,
-  sparkles: Sparkles,
   dumbbell: Dumbbell,
 }
 

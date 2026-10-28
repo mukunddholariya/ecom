@@ -35,6 +35,8 @@ export interface Order {
   address: Address
   subtotal: number
   deliveryCharge: number
+  couponCode?: string
+  couponDiscount?: number
   total: number
 }
 

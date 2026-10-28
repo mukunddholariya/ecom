@@ -1,30 +1,30 @@
 [
   {
     "id": "ban-01",
-    "title": "Up to 40% Off Electronics",
-    "subtitle": "Earbuds, smartwatches, and accessories — limited stock.",
-    "cta": "Shop Now",
-    "href": "/products?category=electronics",
+    "title": "Thoughtfully Designed Intimate Protection",
+    "subtitle": "Ultra-thin latex and polyisoprene essentials tested for peace of mind and comfort.",
+    "cta": "Explore Collection",
+    "href": "/products?category=ultra-thin",
     "imageUrl": "/images/banners/banner-electronics.svg",
     "theme": "dark",
     "accentClass": "bg-cta text-cta-foreground hover:bg-cta/90"
   },
   {
     "id": "ban-02",
-    "title": "New Season Fashion",
-    "subtitle": "Kurtas, tees, and sneakers refreshed for the new season.",
-    "cta": "Explore Collection",
-    "href": "/products?category=fashion",
+    "title": "Sensitive Skin & Latex-Free",
+    "subtitle": "Hypoallergenic polyisoprene barriers designed for natural touch and sensitivity.",
+    "cta": "Discover Latex-Free",
+    "href": "/products?category=latex-free",
     "imageUrl": "/images/banners/banner-fashion.svg",
     "theme": "dark",
     "accentClass": "bg-primary text-primary-foreground hover:bg-primary/90"
   },
   {
     "id": "ban-03",
-    "title": "Home Essentials",
-    "subtitle": "Cast iron cookware, bamboo storage, and more for your home.",
-    "cta": "Shop Home",
-    "href": "/products?category=home-kitchen",
+    "title": "Pure Hydration & Smooth Glide",
+    "subtitle": "pH-balanced, water-soluble personal gels safe for all standard protection.",
+    "cta": "Shop Lubricants",
+    "href": "/products?category=lubricants",
     "imageUrl": "/images/banners/banner-home.svg",
     "theme": "dark",
     "accentClass": "bg-cta text-cta-foreground hover:bg-cta/90"

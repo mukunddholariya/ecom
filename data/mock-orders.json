@@ -8,12 +8,12 @@
     "items": [
       {
         "productId": "prod-01",
-        "slug": "nova-buds-pro",
-        "name": "Nova Buds Pro",
-        "image": "/images/products/nova-buds-pro.svg",
-        "price": 2999,
+        "slug": "aura-featherlight-ultra-thin",
+        "name": "Aura Featherlight Ultra-Thin Protection",
+        "image": "/images/placeholder.svg",
+        "price": 349,
         "quantity": 1,
-        "variantLabel": "Midnight Black"
+        "variantLabel": "Pack of 10"
       }
     ],
     "address": {
@@ -25,9 +25,9 @@
       "state": "Karnataka",
       "pincode": "560038"
     },
-    "subtotal": 2999,
-    "deliveryCharge": 0,
-    "total": 2999
+    "subtotal": 349,
+    "deliveryCharge": 49,
+    "total": 398
   },
   {
     "id": "ord-1002",
@@ -37,22 +37,22 @@
     "paymentMethod": "cod",
     "items": [
       {
-        "productId": "prod-04",
-        "slug": "kurta-linen-blend-navy",
-        "name": "Linen Blend Straight Kurta",
-        "image": "/images/products/linen-kurta.svg",
-        "price": 899,
+        "productId": "prod-03",
+        "slug": "velvettouch-dual-texture-ribbed-dotted",
+        "name": "VelvetTouch Dual-Texture Ribbed & Dotted",
+        "image": "/images/placeholder.svg",
+        "price": 329,
         "quantity": 1,
-        "variantLabel": "L"
+        "variantLabel": "Pack of 10"
       },
       {
-        "productId": "prod-05",
-        "slug": "everyday-graphic-tee",
-        "name": "Everyday Graphic Tee",
-        "image": "/images/products/graphic-tee.svg",
-        "price": 499,
+        "productId": "prod-09",
+        "slug": "hydroglide-pure-water-based-lubricant",
+        "name": "HydroGlide Natural Water-Based Personal Gel",
+        "image": "/images/placeholder.svg",
+        "price": 349,
         "quantity": 1,
-        "variantLabel": "M"
+        "variantLabel": "100 ml Pump"
       }
     ],
     "address": {
@@ -64,9 +64,9 @@
       "state": "Karnataka",
       "pincode": "560038"
     },
-    "subtotal": 1398,
-    "deliveryCharge": 49,
-    "total": 1447
+    "subtotal": 678,
+    "deliveryCharge": 0,
+    "total": 678
   },
   {
     "id": "ord-1003",
@@ -76,13 +76,13 @@
     "paymentMethod": "online",
     "items": [
       {
-        "productId": "prod-02",
-        "slug": "zenith-smartwatch-x2",
-        "name": "Zenith Smartwatch X2",
-        "image": "/images/products/zenith-smartwatch-x2.svg",
-        "price": 6499,
+        "productId": "prod-07",
+        "slug": "naturasense-polyisoprene-latex-free",
+        "name": "NaturaSense Non-Latex Polyisoprene Protection",
+        "image": "/images/placeholder.svg",
+        "price": 549,
         "quantity": 1,
-        "variantLabel": "Obsidian"
+        "variantLabel": "Pack of 8"
       }
     ],
     "address": {
@@ -94,8 +94,8 @@
       "state": "Karnataka",
       "pincode": "560103"
     },
-    "subtotal": 6499,
+    "subtotal": 549,
     "deliveryCharge": 0,
-    "total": 6499
+    "total": 549
   }
 ]

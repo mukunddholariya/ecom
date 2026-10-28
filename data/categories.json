@@ -1,37 +1,47 @@
 [
   {
     "id": "cat-01",
-    "slug": "electronics",
-    "name": "Electronics",
-    "icon": "smartphone",
-    "description": "Phones, laptops, earphones, and gadgets"
+    "slug": "ultra-thin",
+    "name": "Ultra Thin",
+    "icon": "shield",
+    "description": "Featherlight, close-feel protection designed for natural sensitivity and comfort.",
+    "sortOrder": 1,
+    "isActive": true
   },
   {
     "id": "cat-02",
-    "slug": "fashion",
-    "name": "Fashion",
-    "icon": "shirt",
-    "description": "Kurtas, T-shirts, jeans, shoes, and accessories"
+    "slug": "textured-ribbed",
+    "name": "Textured & Ribbed",
+    "icon": "sparkles",
+    "description": "Raised ribs, contoured dots, and textured options for enhanced stimulation.",
+    "sortOrder": 2,
+    "isActive": true
   },
   {
     "id": "cat-03",
-    "slug": "home-kitchen",
-    "name": "Home & Kitchen",
-    "icon": "home",
-    "description": "Cookware, storage, décor, and appliances"
+    "slug": "flavoured",
+    "name": "Flavoured",
+    "icon": "heart",
+    "description": "Aromatic food-grade flavoured varieties crafted for sensory exploration.",
+    "sortOrder": 3,
+    "isActive": true
   },
   {
     "id": "cat-04",
-    "slug": "beauty",
-    "name": "Beauty & Care",
-    "icon": "sparkles",
-    "description": "Skincare, grooming, and personal care essentials"
+    "slug": "latex-free",
+    "name": "Latex-Free",
+    "icon": "leaf",
+    "description": "Polyisoprene and non-latex materials engineered for sensitive or allergy-prone skin.",
+    "sortOrder": 4,
+    "isActive": true
   },
   {
     "id": "cat-05",
-    "slug": "sports",
-    "name": "Sports & Fitness",
-    "icon": "dumbbell",
-    "description": "Equipment, activewear, and outdoor gear"
+    "slug": "lubricants",
+    "name": "Lubricants & Gels",
+    "icon": "droplets",
+    "description": "Gentle, condom-compatible water-based intimate gels for lasting glide and comfort.",
+    "sortOrder": 5,
+    "isActive": true
   }
 ]

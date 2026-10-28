@@ -17,6 +17,7 @@ import {
   ShoppingBag,
   Truck,
   Check,
+  Tag,
 } from "lucide-react"
 import { findOrderById } from "@/lib/orders"
 import { formatPrice } from "@/lib/format"
@@ -352,6 +353,16 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
                     )}
                   </span>
                 </div>
+
+                {order.couponDiscount && order.couponDiscount > 0 ? (
+                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Tag className="size-3" />
+                      Coupon Discount {order.couponCode ? `(${order.couponCode})` : ""}
+                    </span>
+                    <span>-{formatPrice(order.couponDiscount)}</span>
+                  </div>
+                ) : null}
 
                 <Separator />
 

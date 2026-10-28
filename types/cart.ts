@@ -23,4 +23,6 @@ export interface CartTotals {
   deliveryCharge: number
   total: number
   totalSavings: number
+  couponDiscount?: number
+  appliedCouponCode?: string
 }

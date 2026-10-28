@@ -12,7 +12,9 @@ import {
 } from "react"
 import { getStorage, setStorage, STORAGE_KEYS } from "@/lib/storage"
 import { getProductById } from "@/lib/data"
+import { validateCoupon } from "@/lib/coupons"
 import type { Cart, CartItem, CartTotals } from "@/types/cart"
+import type { Coupon } from "@/types/coupon"
 
 const EMPTY_CART: Cart = { items: [] }
 
@@ -26,24 +28,44 @@ function useIsMounted() {
   )
 }
 
-function computeTotals(cart: Cart): CartTotals {
+function computeTotals(cart: Cart, coupon: Coupon | null): CartTotals {
   const itemCount = cart.items.reduce((sum, item) => sum + item.quantity, 0)
   const subtotal = cart.items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
   )
-  // Free delivery above ₹499
-  const deliveryCharge = subtotal >= 499 || subtotal === 0 ? 0 : 49
-  const total = subtotal + deliveryCharge
+  let deliveryCharge = subtotal >= 499 || subtotal === 0 ? 0 : 49
+  let couponDiscount = 0
 
-  const totalSavings = cart.items.reduce((sum, item) => {
-    if (item.originalPrice && item.originalPrice > item.price) {
-      return sum + (item.originalPrice - item.price) * item.quantity
+  if (coupon && subtotal > 0) {
+    const val = validateCoupon(coupon.code, subtotal, deliveryCharge)
+    if (val.valid) {
+      couponDiscount = val.discount
+      if (val.deliveryDiscount > 0) {
+        deliveryCharge = Math.max(0, deliveryCharge - val.deliveryDiscount)
+      }
     }
-    return sum
-  }, 0)
+  }
 
-  return { itemCount, subtotal, deliveryCharge, total, totalSavings }
+  const total = Math.max(0, subtotal - couponDiscount + deliveryCharge)
+
+  const totalSavings =
+    cart.items.reduce((sum, item) => {
+      if (item.originalPrice && item.originalPrice > item.price) {
+        return sum + (item.originalPrice - item.price) * item.quantity
+      }
+      return sum
+    }, 0) + couponDiscount
+
+  return {
+    itemCount,
+    subtotal,
+    deliveryCharge,
+    total,
+    totalSavings,
+    couponDiscount,
+    appliedCouponCode: coupon?.code,
+  }
 }
 
 function loadInitialCart(): Cart {
@@ -77,6 +99,9 @@ interface CartContextValue {
   totals: CartTotals
   isLoaded: boolean
   isCartSheetOpen: boolean
+  appliedCoupon: Coupon | null
+  applyCoupon: (code: string) => { success: boolean; message: string }
+  removeCoupon: () => void
   openCartSheet: () => void
   closeCartSheet: () => void
   setIsCartSheetOpen: (open: boolean) => void
@@ -95,6 +120,7 @@ const CartContext = createContext<CartContextValue | null>(null)
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<Cart>(() => loadInitialCart())
   const [isCartSheetOpen, setIsCartSheetOpen] = useState(false)
+  const [appliedCoupon, setAppliedCoupon] = useState<Coupon | null>(null)
   const isLoaded = useIsMounted()
 
   // Persist to storage whenever cart changes after client mount
@@ -106,6 +132,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const openCartSheet = useCallback(() => setIsCartSheetOpen(true), [])
   const closeCartSheet = useCallback(() => setIsCartSheetOpen(false), [])
+
+  const applyCoupon = useCallback(
+    (code: string) => {
+      const liveTotals = computeTotals(cart, null)
+      const res = validateCoupon(code, liveTotals.subtotal, liveTotals.deliveryCharge)
+      if (res.valid && res.coupon) {
+        setAppliedCoupon(res.coupon)
+        return { success: true, message: res.message }
+      }
+      return { success: false, message: res.message }
+    },
+    [cart],
+  )
+
+  const removeCoupon = useCallback(() => {
+    setAppliedCoupon(null)
+  }, [])
 
   const addItem = useCallback(
     (newItem: Omit<CartItem, "quantity">, qty = 1) => {
@@ -192,7 +235,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Guard against hydration mismatch: only expose saved items once mounted
   const exposedCart = isLoaded ? cart : EMPTY_CART
-  const totals = useMemo(() => computeTotals(exposedCart), [exposedCart])
+  const totals = useMemo(
+    () => computeTotals(exposedCart, appliedCoupon),
+    [exposedCart, appliedCoupon],
+  )
 
   const contextValue = useMemo(
     () => ({
@@ -200,6 +246,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
       totals,
       isLoaded,
       isCartSheetOpen,
+      appliedCoupon,
+      applyCoupon,
+      removeCoupon,
       openCartSheet,
       closeCartSheet,
       setIsCartSheetOpen,
@@ -213,6 +262,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
       totals,
       isLoaded,
       isCartSheetOpen,
+      appliedCoupon,
+      applyCoupon,
+      removeCoupon,
       openCartSheet,
       closeCartSheet,
       addItem,

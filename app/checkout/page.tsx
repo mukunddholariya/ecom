@@ -17,10 +17,12 @@ import {
   ChevronRight,
   Loader2,
   Lock,
+  Tag,
 } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 import { useAuth } from "@/hooks/use-auth"
 import { getProductById } from "@/lib/data"
+import { validateCoupon } from "@/lib/coupons"
 import { formatPrice } from "@/lib/format"
 import { saveLocalOrder } from "@/lib/orders"
 import { getAddressesForUser } from "@/lib/addresses"
@@ -35,7 +37,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 export default function CheckoutPage() {
   const router = useRouter()
-  const { cart, isLoaded: isCartLoaded, clearCart } = useCart()
+  const { cart, appliedCoupon, isLoaded: isCartLoaded, clearCart } = useCart()
   const { session, isSignedIn, isLoaded: isAuthLoaded } = useAuth()
 
   // Address form fields
@@ -60,7 +62,14 @@ export default function CheckoutPage() {
   const effectivePhone = phone !== "" ? phone : (session?.phone || "")
 
   // Trusted recalculation of cart totals from authoritative product data
-  const { verifiedItems, subtotal, deliveryCharge, grandTotal, totalSavings } = useMemo(() => {
+  const {
+    verifiedItems,
+    subtotal,
+    deliveryCharge,
+    couponDiscount,
+    grandTotal,
+    totalSavings,
+  } = useMemo(() => {
     const verified: OrderItem[] = []
     let calcSubtotal = 0
     let calcSavings = 0
@@ -87,17 +96,31 @@ export default function CheckoutPage() {
       }
     }
 
-    const calcDelivery = calcSubtotal >= 499 || calcSubtotal === 0 ? 0 : 49
-    const calcGrandTotal = calcSubtotal + calcDelivery
+    let calcDelivery = calcSubtotal >= 499 || calcSubtotal === 0 ? 0 : 49
+    let calcCouponDiscount = 0
+
+    if (appliedCoupon && calcSubtotal > 0) {
+      const val = validateCoupon(appliedCoupon.code, calcSubtotal, calcDelivery)
+      if (val.valid) {
+        calcCouponDiscount = val.discount
+        if (val.deliveryDiscount > 0) {
+          calcDelivery = Math.max(0, calcDelivery - val.deliveryDiscount)
+        }
+      }
+    }
+
+    const calcGrandTotal = Math.max(0, calcSubtotal - calcCouponDiscount + calcDelivery)
+    calcSavings += calcCouponDiscount
 
     return {
       verifiedItems: verified,
       subtotal: calcSubtotal,
       deliveryCharge: calcDelivery,
+      couponDiscount: calcCouponDiscount,
       grandTotal: calcGrandTotal,
       totalSavings: calcSavings,
     }
-  }, [cart.items])
+  }, [cart.items, appliedCoupon])
 
   // Handle filling demo address
   const handleAutofillDemoAddress = () => {
@@ -206,6 +229,8 @@ export default function CheckoutPage() {
         address: addressSnapshot,
         subtotal,
         deliveryCharge,
+        couponCode: couponDiscount > 0 ? appliedCoupon?.code : undefined,
+        couponDiscount: couponDiscount > 0 ? couponDiscount : undefined,
         total: grandTotal,
       }
 
@@ -691,6 +716,16 @@ export default function CheckoutPage() {
                     )}
                   </span>
                 </div>
+
+                {couponDiscount > 0 && (
+                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-medium text-xs">
+                    <span className="flex items-center gap-1">
+                      <Tag className="size-3" />
+                      Coupon Discount ({appliedCoupon?.code})
+                    </span>
+                    <span>-{formatPrice(couponDiscount)}</span>
+                  </div>
+                )}
 
                 {totalSavings > 0 && (
                   <div className="flex items-center justify-between rounded-lg bg-cta/15 px-2 py-1 text-xs font-bold text-amber-950 dark:text-amber-300 border border-cta/30">

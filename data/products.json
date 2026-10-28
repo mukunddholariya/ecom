@@ -1,823 +1,597 @@
 [
   {
     "id": "prod-01",
-    "slug": "nova-buds-pro",
-    "name": "Nova Buds Pro",
-    "brand": "NovaSound",
+    "slug": "aura-featherlight-ultra-thin",
+    "name": "Aura Featherlight Ultra-Thin Protection",
+    "brand": "Aura",
     "categoryId": "cat-01",
-    "shortDescription": "True wireless earbuds with 40 h battery and active noise cancellation.",
-    "description": "Nova Buds Pro deliver studio-grade sound in a featherlight form factor. Active noise cancellation (ANC) lets you focus anywhere, while Transparency mode keeps you aware of your surroundings. Six microphones ensure crystal-clear calls. IPX5 sweat resistance makes them perfect for workouts or commutes. Each bud lasts 10 h; the compact charging case adds 30 h more.",
-    "price": 2999,
-    "originalPrice": 4499,
+    "shortDescription": "Featherlight natural rubber latex protection engineered for enhanced sensitivity and comfort.",
+    "description": "Aura Featherlight delivers dependable protection with an ultra-thin profile designed for natural intimacy. Pre-lubricated with a smooth, neutral silicone-based lubricant. Electronically tested for reliability. (Prototype Demo Fixture).",
+    "price": 349,
+    "originalPrice": 499,
     "currency": "INR",
     "images": [
-      "/images/products/nova-buds-pro.svg"
+      "/images/placeholder.svg"
     ],
-    "rating": 4.4,
-    "reviewCount": 1287,
-    "stock": 45,
-    "sku": "NS-NBP-001",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "stock": 50,
+    "sku": "AUR-FL-010",
     "tags": [
-      "earbuds",
-      "wireless",
-      "anc",
-      "electronics"
+      "ultra-thin",
+      "protection",
+      "natural-latex",
+      "essentials"
     ],
     "isFeatured": true,
-    "isNew": false,
+    "isNew": true,
+    "demoOnly": true,
     "variants": [
       {
-        "type": "color",
-        "label": "Midnight Black",
-        "value": "#1a1a2e",
-        "stock": 30
+        "type": "pack",
+        "label": "Pack of 10",
+        "value": "10",
+        "stock": 35,
+        "sku": "AUR-FL-010",
+        "price": 349,
+        "originalPrice": 499
       },
       {
-        "type": "color",
-        "label": "Pearl White",
-        "value": "#f5f5f5",
-        "stock": 15
+        "type": "pack",
+        "label": "Pack of 20",
+        "value": "20",
+        "stock": 15,
+        "sku": "AUR-FL-020",
+        "price": 599,
+        "originalPrice": 899
       }
     ],
     "specifications": [
       {
-        "name": "Battery Life",
-        "value": "40 Hours (Case) / 10 Hours (Buds)",
-        "group": "Audio & Power"
+        "name": "Nominal Width",
+        "value": "53mm ± 2mm",
+        "group": "Dimensions"
       },
       {
-        "name": "Active Noise Cancellation",
-        "value": "Up to 35 dB ANC",
-        "group": "Audio & Power"
+        "name": "Material",
+        "value": "Natural Rubber Latex",
+        "group": "Material & Build"
       },
       {
-        "name": "Bluetooth Version",
-        "value": "5.3 with AAC/SBC codec",
-        "group": "Connectivity"
+        "name": "Lubrication",
+        "value": "Silicone-based neutral lubricant",
+        "group": "Features"
       },
       {
-        "name": "Water Resistance",
-        "value": "IPX5 Sweat & Water Resistant",
-        "group": "Build & Protection"
-      },
-      {
-        "name": "Microphones",
-        "value": "6-Mic Environmental Noise Cancellation",
-        "group": "Audio & Power"
+        "name": "Shape",
+        "value": "Straight-walled with reservoir teat end",
+        "group": "Design"
       }
     ],
     "highlights": [
-      "Active Noise Cancellation up to 35dB",
-      "40 Hours Total Playback",
-      "IPX5 Sweat & Splash Proof",
-      "Fast 10-Min Charge for 2 Hours Sound"
+      "Ultra-thin latex design for heightened sensitivity",
+      "Smooth silicone-based neutral lubrication",
+      "Straight-walled shape with reservoir teat end",
+      "Batch tested for tensile strength (Demo fixture)"
     ],
-    "warranty": "1 Year Manufacturer Replacement Warranty"
+    "warranty": "Replacement guaranteed for damaged or unsealed packaging on delivery."
   },
   {
     "id": "prod-02",
-    "slug": "zenith-smartwatch-x2",
-    "name": "Zenith Smartwatch X2",
-    "brand": "Zenith Wearables",
+    "slug": "silkshield-micro-thin-bare",
+    "name": "SilkShield Micro-Thin Bare Feel",
+    "brand": "SilkShield",
     "categoryId": "cat-01",
-    "shortDescription": "AMOLED smartwatch with health tracking, GPS, and 7-day battery.",
-    "description": "Track your health round the clock with Zenith X2. The vivid 1.43\" AMOLED display stays visible even in bright sunlight. Built-in GPS, SpO2 sensor, and 24/7 heart-rate monitoring give you actionable health insights. Over 100 sport modes and water resistance to 5 ATM make it a true all-weather companion. Pairs with both Android and iOS.",
-    "price": 6499,
-    "originalPrice": 8999,
+    "shortDescription": "Precision-crafted thin latex protection with teat end and silky lubrication.",
+    "description": "SilkShield Micro-Thin is created for those who prioritize a barely-there feeling without compromising quality. Batch tested for tensile strength and elasticity. (Prototype Demo Fixture).",
+    "price": 399,
+    "originalPrice": 549,
     "currency": "INR",
     "images": [
-      "/images/products/zenith-smartwatch-x2.svg"
+      "/images/placeholder.svg"
     ],
     "rating": 4.6,
-    "reviewCount": 843,
-    "stock": 22,
-    "sku": "ZW-X2-002",
+    "reviewCount": 0,
+    "stock": 40,
+    "sku": "SS-MTB-010",
     "tags": [
-      "smartwatch",
-      "wearable",
-      "gps",
-      "health",
-      "electronics"
+      "ultra-thin",
+      "micro-thin",
+      "silky",
+      "protection"
     ],
     "isFeatured": true,
-    "isNew": true,
-    "variants": [
-      {
-        "type": "color",
-        "label": "Obsidian",
-        "value": "#0f3460",
-        "stock": 12
-      },
-      {
-        "type": "color",
-        "label": "Rose Gold",
-        "value": "#b5838d",
-        "stock": 10
-      }
-    ],
+    "isNew": false,
+    "demoOnly": true,
     "specifications": [
       {
-        "name": "Display",
-        "value": "1.43\" AMOLED 466x466 px (1000 nits)",
-        "group": "Display"
+        "name": "Nominal Width",
+        "value": "52mm ± 2mm",
+        "group": "Dimensions"
       },
       {
-        "name": "Battery Life",
-        "value": "Up to 7 Days (Typical Usage)",
-        "group": "Power"
+        "name": "Material",
+        "value": "Natural Rubber Latex",
+        "group": "Material & Build"
       },
       {
-        "name": "Health Sensors",
-        "value": "Optical Heart Rate, SpO2, Sleep Monitor",
-        "group": "Sensors"
-      },
-      {
-        "name": "Water Resistance",
-        "value": "5 ATM (50m Waterproof)",
-        "group": "Build & Protection"
-      },
-      {
-        "name": "Compatibility",
-        "value": "Android 8.0+ and iOS 12.0+",
-        "group": "Connectivity"
+        "name": "Pack Size",
+        "value": "10 units",
+        "group": "Packaging"
       }
     ],
     "highlights": [
-      "1.43\" Always-On AMOLED Display",
-      "24/7 Heart Rate & SpO2 Tracking",
-      "100+ Professional Sport Modes",
-      "5 ATM Water Resistance"
+      "Micro-thin wall construction",
+      "Silky smooth extended lubrication",
+      "Electronically evaluated for integrity"
     ],
-    "warranty": "1 Year Brand Warranty"
+    "warranty": "Standard return within 7 days if seals are unbroken."
   },
   {
     "id": "prod-03",
-    "slug": "swift-usb-c-hub-7in1",
-    "name": "Swift USB-C Hub 7-in-1",
-    "brand": "SwiftTech",
-    "categoryId": "cat-01",
-    "shortDescription": "Expand any laptop with HDMI 4K, 3× USB-A, SD card, and 100W PD.",
-    "description": "One compact hub replaces the entire cable clutter on your desk. The Swift 7-in-1 supports 4K@60Hz HDMI output, three USB-A 3.0 ports, an SD/microSD card reader, and 100W Power Delivery pass-through so your laptop charges while you work. Aluminium shell stays cool during extended use. Plug-and-play — no drivers needed.",
-    "price": 1799,
-    "originalPrice": 2499,
+    "slug": "velvettouch-dual-texture-ribbed-dotted",
+    "name": "VelvetTouch Dual-Texture Ribbed & Dotted",
+    "brand": "VelvetTouch",
+    "categoryId": "cat-02",
+    "shortDescription": "Raised circular dots and contoured ridges for mutual sensory stimulation.",
+    "description": "VelvetTouch combines alternating rings of raised ridges and micro-dots to deliver varied tactile sensations. Easy-on shaped for a comfortable, snug fit. (Prototype Demo Fixture).",
+    "price": 329,
+    "originalPrice": 450,
     "currency": "INR",
     "images": [
-      "/images/products/swift-usb-c-hub.svg"
+      "/images/placeholder.svg"
     ],
-    "rating": 4.2,
-    "reviewCount": 412,
-    "stock": 68,
-    "sku": "ST-HUB-003",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "stock": 60,
+    "sku": "VT-RND-010",
     "tags": [
-      "usb-c",
-      "hub",
-      "laptop",
-      "accessories",
-      "electronics"
+      "textured",
+      "ribbed",
+      "dotted",
+      "stimulation"
     ],
-    "isFeatured": false,
+    "isFeatured": true,
     "isNew": false,
-    "specifications": [
+    "demoOnly": true,
+    "variants": [
       {
-        "name": "Ports",
-        "value": "HDMI 4K@60Hz, 3x USB 3.0, SD, MicroSD, 100W PD",
-        "group": "Ports & Connectivity"
+        "type": "pack",
+        "label": "Pack of 10",
+        "value": "10",
+        "stock": 40,
+        "sku": "VT-RND-010",
+        "price": 329,
+        "originalPrice": 450
       },
       {
-        "name": "Power Delivery",
-        "value": "Pass-through USB-C 100W Fast Charge",
-        "group": "Power"
+        "type": "pack",
+        "label": "Pack of 20",
+        "value": "20",
+        "stock": 20,
+        "sku": "VT-RND-020",
+        "price": 549,
+        "originalPrice": 799
+      }
+    ],
+    "specifications": [
+      {
+        "name": "Nominal Width",
+        "value": "53mm ± 2mm",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Texture",
+        "value": "Raised Ribs and Micro-Dots",
+        "group": "Texture & Shape"
       },
       {
         "name": "Material",
-        "value": "Aviation-Grade Anodized Aluminum",
-        "group": "Design"
-      },
-      {
-        "name": "Transfer Speeds",
-        "value": "Up to 5 Gbps Data Transfer",
-        "group": "Performance"
+        "value": "Natural Rubber Latex",
+        "group": "Material & Build"
       }
     ],
     "highlights": [
-      "7-in-1 Compact Connectivity",
-      "100W Power Delivery Pass-Through",
-      "Ultra-Sharp 4K@60Hz HDMI Output",
-      "Durable Aluminum Heat Dissipation"
+      "Dual-textured ribs and elevated dots",
+      "Contoured fit for enhanced comfort",
+      "Pre-lubricated with gentle neutral formula"
     ],
-    "warranty": "18 Months Extended Brand Warranty"
+    "warranty": "Standard return within 7 days if seals are unbroken."
   },
   {
     "id": "prod-04",
-    "slug": "kurta-linen-blend-navy",
-    "name": "Linen Blend Straight Kurta",
-    "brand": "KhaDi House",
+    "slug": "pureguard-intense-dotted",
+    "name": "PureGuard Intense Dotted Sensation",
+    "brand": "PureGuard",
     "categoryId": "cat-02",
-    "shortDescription": "Relaxed-fit linen-blend kurta perfect for festive and casual occasions.",
-    "description": "Crafted from a premium linen-cotton blend, this kurta offers breathability and a natural texture that only gets better with each wash. The straight silhouette and subtle pintuck detailing make it equally suitable for family gatherings or everyday office wear. Machine washable. Available in sizes S to XXL.",
-    "price": 899,
-    "originalPrice": 1299,
+    "shortDescription": "All-over micro-textured dots designed for enhanced tactile connection.",
+    "description": "PureGuard Intense Dotted features densely arranged micro-dots along the entire sleeve. Form-fitting contour reduces slippage while maintaining ease of use. (Prototype Demo Fixture).",
+    "price": 299,
+    "originalPrice": 399,
     "currency": "INR",
     "images": [
-      "/images/products/linen-kurta.svg"
+      "/images/placeholder.svg"
     ],
-    "rating": 4.5,
-    "reviewCount": 2104,
-    "stock": 120,
-    "sku": "KH-KUR-004",
+    "rating": 4.2,
+    "reviewCount": 0,
+    "stock": 45,
+    "sku": "PG-DOT-010",
     "tags": [
-      "kurta",
-      "linen",
-      "ethnic",
-      "men",
-      "fashion"
+      "dotted",
+      "textured",
+      "pureguard"
     ],
-    "isFeatured": true,
-    "isNew": false,
-    "variants": [
-      {
-        "type": "size",
-        "label": "S",
-        "value": "S",
-        "stock": 25
-      },
-      {
-        "type": "size",
-        "label": "M",
-        "value": "M",
-        "stock": 40
-      },
-      {
-        "type": "size",
-        "label": "L",
-        "value": "L",
-        "stock": 35
-      },
-      {
-        "type": "size",
-        "label": "XL",
-        "value": "XL",
-        "stock": 15
-      },
-      {
-        "type": "size",
-        "label": "XXL",
-        "value": "XXL",
-        "stock": 5
-      }
-    ],
+    "isFeatured": false,
+    "isNew": true,
+    "demoOnly": true,
     "specifications": [
       {
-        "name": "Fabric",
-        "value": "Premium Linen-Cotton Blend (60% Linen, 40% Cotton)",
-        "group": "Material"
+        "name": "Nominal Width",
+        "value": "53mm",
+        "group": "Dimensions"
       },
       {
-        "name": "Fit",
-        "value": "Regular Comfort Fit",
-        "group": "Fit & Style"
+        "name": "Texture",
+        "value": "All-over Micro-Dots",
+        "group": "Texture & Shape"
       },
       {
-        "name": "Sleeve Length",
-        "value": "Full Sleeve with Roll-up Tab",
-        "group": "Fit & Style"
-      },
-      {
-        "name": "Wash Care",
-        "value": "Gentle Machine Wash in Cold Water",
-        "group": "Care"
-      },
-      {
-        "name": "Occasion",
-        "value": "Casual & Festive Wear",
-        "group": "General"
+        "name": "Material",
+        "value": "Natural Rubber Latex",
+        "group": "Material & Build"
       }
     ],
     "highlights": [
-      "Breathable Pure Linen Blend",
-      "Natural Texture & Rich Navy Hue",
-      "Mandarin Collar Styling",
-      "Side Pockets for Convenience"
+      "High-density dotted surface",
+      "Anatomically contoured shape",
+      "Electronically safety tested"
     ],
-    "warranty": "7-Day Easy Size Exchange & Return"
+    "warranty": "Standard return within 7 days if seals are unbroken."
   },
   {
     "id": "prod-05",
-    "slug": "everyday-graphic-tee",
-    "name": "Everyday Graphic Tee",
-    "brand": "ThreadCo",
-    "categoryId": "cat-02",
-    "shortDescription": "100% cotton boxy-fit tee with an original graphic print.",
-    "description": "Made from 200 GSM ring-spun cotton, this boxy-fit tee is as comfortable at brunch as it is on lazy Sundays. Pre-shrunk fabric keeps the fit true after washing. The oversized graphic is screen-printed with water-based inks that stay vibrant wash after wash. Available in five colourways.",
-    "price": 499,
+    "slug": "aura-sweet-strawberry-flavoured",
+    "name": "Aura Sweet Strawberry Flavoured",
+    "brand": "Aura",
+    "categoryId": "cat-03",
+    "shortDescription": "Pleasant sweet strawberry aroma paired with premium natural rubber latex.",
+    "description": "Infused with food-grade strawberry aroma and a gentle tint. Delivers a refreshing sensory twist to routine intimate moments. (Prototype Demo Fixture).",
+    "price": 279,
+    "originalPrice": 375,
     "currency": "INR",
     "images": [
-      "/images/products/graphic-tee.svg"
+      "/images/placeholder.svg"
     ],
-    "rating": 4.1,
-    "reviewCount": 3810,
-    "stock": 200,
-    "sku": "TC-TEE-005",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "stock": 55,
+    "sku": "AUR-STW-010",
     "tags": [
-      "t-shirt",
-      "cotton",
-      "graphic",
-      "unisex",
-      "fashion"
+      "flavoured",
+      "strawberry",
+      "aroma",
+      "aura"
     ],
     "isFeatured": false,
-    "isNew": true,
-    "variants": [
-      {
-        "type": "size",
-        "label": "XS",
-        "value": "XS",
-        "stock": 20
-      },
-      {
-        "type": "size",
-        "label": "S",
-        "value": "S",
-        "stock": 50
-      },
-      {
-        "type": "size",
-        "label": "M",
-        "value": "M",
-        "stock": 70
-      },
-      {
-        "type": "size",
-        "label": "L",
-        "value": "L",
-        "stock": 40
-      },
-      {
-        "type": "size",
-        "label": "XL",
-        "value": "XL",
-        "stock": 20
-      }
-    ],
+    "isNew": false,
+    "demoOnly": true,
     "specifications": [
       {
-        "name": "Fabric",
-        "value": "100% Combed Ringspun Cotton (180 GSM)",
-        "group": "Material"
+        "name": "Flavour/Aroma",
+        "value": "Sweet Strawberry",
+        "group": "Sensory"
       },
       {
-        "name": "Fit",
-        "value": "Relaxed Unisex Fit",
-        "group": "Fit & Style"
+        "name": "Nominal Width",
+        "value": "53mm",
+        "group": "Dimensions"
       },
       {
-        "name": "Print Type",
-        "value": "High-Density Screen Print",
-        "group": "Design"
-      },
-      {
-        "name": "Wash Care",
-        "value": "Machine wash warm, do not iron on print",
-        "group": "Care"
+        "name": "Material",
+        "value": "Coloured Natural Rubber Latex",
+        "group": "Material & Build"
       }
     ],
     "highlights": [
-      "100% Super-Combed 180 GSM Cotton",
-      "Pre-Shrunk Bio-Washed Finish",
-      "Durable Colorfast Screen Print",
-      "Ribbed Round Neck Collar"
+      "Sweet strawberry aromatic flavour",
+      "Coloured natural latex",
+      "Safe food-grade flavouring formula"
     ],
-    "warranty": "7-Day Easy Return Policy"
+    "warranty": "Standard return within 7 days if seals are unbroken."
   },
   {
     "id": "prod-06",
-    "slug": "terra-sneakers-white",
-    "name": "Terra Sneakers",
-    "brand": "Stridewell",
-    "categoryId": "cat-02",
-    "shortDescription": "Lightweight EVA-sole sneakers with memory foam insole.",
-    "description": "Terra Sneakers combine a vulcanised rubber sole with an ultra-light EVA midsole to keep your feet comfortable all day. The breathable mesh upper prevents overheating and the memory foam insole molds to your foot shape. A minimalist triple-white colourway pairs with almost any outfit.",
-    "price": 1299,
-    "originalPrice": 1799,
-    "currency": "INR",
-    "images": [
-      "/images/products/terra-sneakers.svg"
-    ],
-    "rating": 4.3,
-    "reviewCount": 987,
-    "stock": 60,
-    "sku": "SW-SNK-006",
-    "tags": [
-      "sneakers",
-      "shoes",
-      "casual",
-      "fashion"
-    ],
-    "isFeatured": false,
-    "isNew": false,
-    "variants": [
-      {
-        "type": "size",
-        "label": "UK 6",
-        "value": "6",
-        "stock": 8
-      },
-      {
-        "type": "size",
-        "label": "UK 7",
-        "value": "7",
-        "stock": 15
-      },
-      {
-        "type": "size",
-        "label": "UK 8",
-        "value": "8",
-        "stock": 18
-      },
-      {
-        "type": "size",
-        "label": "UK 9",
-        "value": "9",
-        "stock": 12
-      },
-      {
-        "type": "size",
-        "label": "UK 10",
-        "value": "10",
-        "stock": 7
-      }
-    ],
-    "specifications": [
-      {
-        "name": "Upper Material",
-        "value": "Breathable Mesh with Suede Overlays",
-        "group": "Material"
-      },
-      {
-        "name": "Sole",
-        "value": "High-Grip Thermoplastic Rubber (TPR)",
-        "group": "Performance"
-      },
-      {
-        "name": "Insole",
-        "value": "Memory Foam Cushioned Footbed",
-        "group": "Comfort"
-      },
-      {
-        "name": "Closure",
-        "value": "Lace-Up",
-        "group": "Fit & Style"
-      }
-    ],
-    "highlights": [
-      "Ergonomic Memory Foam Insole",
-      "Lightweight Shock-Absorbing Sole",
-      "Breathable Anti-Sweat Mesh",
-      "Versatile All-Day Comfort"
-    ],
-    "warranty": "3 Months Quality Guarantee"
-  },
-  {
-    "id": "prod-07",
-    "slug": "castiron-kadai-28cm",
-    "name": "Cast Iron Kadai 28 cm",
-    "brand": "IronChef",
+    "slug": "aura-cool-mint-refresh-flavoured",
+    "name": "Aura Cool Mint Refresh Flavoured",
+    "brand": "Aura",
     "categoryId": "cat-03",
-    "shortDescription": "Pre-seasoned cast iron kadai compatible with all hob types including induction.",
-    "description": "The IronChef cast iron kadai comes pre-seasoned with food-grade vegetable oil so it's ready to cook straight out of the box. Exceptional heat retention ensures even cooking and perfect browning. The thick base distributes heat uniformly across all hob types — gas, induction, electric, and ceramic. Builds a natural non-stick patina over time.",
-    "price": 1499,
-    "originalPrice": 1999,
+    "shortDescription": "Crisp, subtle cooling mint aroma with smooth extended lubrication.",
+    "description": "Features a gentle tingling sensation and crisp mint aroma for enhanced novelty and freshness. Standard reservoir tip design. (Prototype Demo Fixture).",
+    "price": 289,
+    "originalPrice": 390,
     "currency": "INR",
     "images": [
-      "/images/products/cast-iron-kadai.svg"
+      "/images/placeholder.svg"
     ],
-    "rating": 4.7,
-    "reviewCount": 5234,
-    "stock": 34,
-    "sku": "IC-KAD-007",
+    "rating": 4.1,
+    "reviewCount": 0,
+    "stock": 30,
+    "sku": "AUR-MNT-010",
     "tags": [
-      "kadai",
-      "cookware",
-      "cast iron",
-      "kitchen"
-    ],
-    "isFeatured": true,
-    "isNew": false,
-    "specifications": [
-      {
-        "name": "Diameter",
-        "value": "28 cm (11 inches)",
-        "group": "Dimensions"
-      },
-      {
-        "name": "Capacity",
-        "value": "3.5 Litres",
-        "group": "Dimensions"
-      },
-      {
-        "name": "Material",
-        "value": "100% Pure Virgin Cast Iron",
-        "group": "Material"
-      },
-      {
-        "name": "Coating",
-        "value": "Pre-Seasoned with 100% Natural Vegetable Oil",
-        "group": "Finish"
-      },
-      {
-        "name": "Stove Compatibility",
-        "value": "Gas, Induction, Oven & Open Fire",
-        "group": "Compatibility"
-      }
-    ],
-    "highlights": [
-      "Naturally Non-Stick Pre-Seasoned Kadai",
-      "Enriches Food with Natural Dietary Iron",
-      "Heavy-Duty Heat Retention",
-      "100% Chemical-Free (No Teflon/PTFE)"
-    ],
-    "warranty": "5-Year Manufacturer Warranty"
-  },
-  {
-    "id": "prod-08",
-    "slug": "bamboo-storage-basket-set",
-    "name": "Bamboo Storage Basket Set (3 pcs)",
-    "brand": "GreenNest",
-    "categoryId": "cat-03",
-    "shortDescription": "Handwoven bamboo baskets in three sizes for pantry, bathroom, and desk.",
-    "description": "Sustainably sourced and handcrafted, these bamboo baskets add warmth and texture to any space. The tight weave keeps contents dust-free while the open-top design makes items easy to grab. Sold as a set of three graduated sizes (S / M / L). Wipe clean with a damp cloth. Suitable for pantry, countertop, bookshelf, or bathroom use.",
-    "price": 699,
-    "currency": "INR",
-    "images": [
-      "/images/products/bamboo-storage-baskets.svg"
-    ],
-    "rating": 4,
-    "reviewCount": 761,
-    "stock": 90,
-    "sku": "GN-BSK-008",
-    "tags": [
-      "basket",
-      "storage",
-      "bamboo",
-      "eco",
-      "home"
+      "flavoured",
+      "mint",
+      "cooling",
+      "aura"
     ],
     "isFeatured": false,
     "isNew": true,
+    "demoOnly": true,
     "specifications": [
       {
-        "name": "Material",
-        "value": "Natural Organically Treated Bamboo",
-        "group": "Material"
+        "name": "Flavour/Aroma",
+        "value": "Cool Mint",
+        "group": "Sensory"
       },
       {
-        "name": "Set Includes",
-        "value": "Small (20cm), Medium (25cm), Large (30cm)",
+        "name": "Nominal Width",
+        "value": "53mm",
         "group": "Dimensions"
       },
       {
-        "name": "Lining",
-        "value": "Removable Washable Linen Fabric Liner",
-        "group": "Design"
-      },
-      {
-        "name": "Eco Certification",
-        "value": "100% Biodegradable & Handwoven",
-        "group": "Sustainability"
+        "name": "Material",
+        "value": "Natural Rubber Latex",
+        "group": "Material & Build"
       }
     ],
     "highlights": [
-      "Set of 3 Nesting Storage Baskets",
-      "Natural Antibacterial Bamboo Weave",
-      "Removable Washable Fabric Liners",
-      "Multi-Purpose Organizer"
+      "Crisp refreshing mint aroma",
+      "Subtle cooling sensation",
+      "Smooth silicone lubrication"
     ],
-    "warranty": "1-Year Quality Replacement"
+    "warranty": "Standard return within 7 days if seals are unbroken."
   },
   {
-    "id": "prod-09",
-    "slug": "glow-vitamin-c-serum",
-    "name": "Glow Vitamin C Serum 30 ml",
-    "brand": "LuminaLab",
+    "id": "prod-07",
+    "slug": "naturasense-polyisoprene-latex-free",
+    "name": "NaturaSense Non-Latex Polyisoprene Protection",
+    "brand": "NaturaSense",
     "categoryId": "cat-04",
-    "shortDescription": "15% Vitamin C + Hyaluronic Acid serum for brightening and hydration.",
-    "description": "LuminaLab's Glow Serum combines stabilised 15% L-ascorbic acid with 2% Hyaluronic Acid and Niacinamide to visibly brighten, plump, and even skin tone in 4 weeks. Lightweight, non-greasy, and suitable for all skin types. Free from parabens, SLS, and artificial fragrance. Dermatologically tested.",
+    "shortDescription": "Advanced polyisoprene formulation for individuals with latex allergies or sensitivities.",
+    "description": "Made from synthetic polyisoprene, NaturaSense provides a softer, more skin-like thermal transfer without natural rubber latex proteins. Suitable for latex-sensitive users. (Prototype Demo Fixture).",
+    "price": 549,
+    "originalPrice": 749,
+    "currency": "INR",
+    "images": [
+      "/images/placeholder.svg"
+    ],
+    "rating": 4.7,
+    "reviewCount": 0,
+    "stock": 25,
+    "sku": "NS-PLI-008",
+    "tags": [
+      "latex-free",
+      "polyisoprene",
+      "sensitive-skin",
+      "allergy-safe"
+    ],
+    "isFeatured": true,
+    "isNew": false,
+    "demoOnly": true,
+    "variants": [
+      {
+        "type": "pack",
+        "label": "Pack of 8",
+        "value": "8",
+        "stock": 15,
+        "sku": "NS-PLI-008",
+        "price": 549,
+        "originalPrice": 749
+      },
+      {
+        "type": "pack",
+        "label": "Pack of 16",
+        "value": "16",
+        "stock": 10,
+        "sku": "NS-PLI-016",
+        "price": 999,
+        "originalPrice": 1399
+      }
+    ],
+    "specifications": [
+      {
+        "name": "Material",
+        "value": "Synthetic Polyisoprene (Non-Latex)",
+        "group": "Material & Build"
+      },
+      {
+        "name": "Nominal Width",
+        "value": "54mm ± 2mm",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Skin Compatibility",
+        "value": "Latex-allergy friendly",
+        "group": "Sensitivity"
+      }
+    ],
+    "highlights": [
+      "100% Latex-free polyisoprene formulation",
+      "Exceptional body-heat transmission",
+      "Hypoallergenic and gentle on delicate skin"
+    ],
+    "warranty": "Standard return within 7 days if seals are unbroken."
+  },
+  {
+    "id": "prod-08",
+    "slug": "silkshield-pure-polyurethane-ultra-thin",
+    "name": "SilkShield Zero-Latex Polyurethane Ultra-Thin",
+    "brand": "SilkShield",
+    "categoryId": "cat-04",
+    "shortDescription": "Ultra-resilient polyurethane protection for maximum heat conduction and natural touch.",
+    "description": "Engineered with medical-grade polyurethane, this non-latex barrier is thinner than traditional latex while offering high burst resistance and compatibility with oil- or water-based gels. (Prototype Demo Fixture).",
     "price": 649,
     "originalPrice": 899,
     "currency": "INR",
     "images": [
-      "/images/products/vitamin-c-serum.svg"
-    ],
-    "rating": 4.5,
-    "reviewCount": 3102,
-    "stock": 77,
-    "sku": "LL-SRM-009",
-    "tags": [
-      "serum",
-      "vitamin c",
-      "skincare",
-      "beauty"
-    ],
-    "isFeatured": true,
-    "isNew": false,
-    "specifications": [
-      {
-        "name": "Volume",
-        "value": "30 ml (1.01 fl oz)",
-        "group": "General"
-      },
-      {
-        "name": "Key Ingredients",
-        "value": "15% Ethyl Ascorbic Acid, Ferulic Acid, Hyaluronic Acid",
-        "group": "Formula"
-      },
-      {
-        "name": "Skin Type",
-        "value": "All Skin Types (Dermatologically Tested)",
-        "group": "Usage"
-      },
-      {
-        "name": "Formulation",
-        "value": "Cruelty-Free, Paraben-Free, Fragrance-Free",
-        "group": "Safety"
-      }
-    ],
-    "highlights": [
-      "15% Active Vitamin C for Radiant Glow",
-      "Boosts Collagen & Fades Dark Spots",
-      "Hydrating Triple-Weight Hyaluronic Acid",
-      "Lightweight Fast-Absorbing Texture"
-    ],
-    "warranty": "100% Authentic Product Guarantee"
-  },
-  {
-    "id": "prod-10",
-    "slug": "charcoal-face-wash",
-    "name": "Activated Charcoal Face Wash 100 ml",
-    "brand": "CleanCo",
-    "categoryId": "cat-04",
-    "shortDescription": "Deep-cleansing charcoal face wash that removes excess oil without stripping.",
-    "description": "Activated charcoal micro-particles draw out impurities, excess sebum, and environmental pollutants from deep within pores without disrupting the skin's natural barrier. Enriched with Aloe Vera and Green Tea extract for a soothing post-wash feel. Suitable for oily and combination skin. Sulphate-free.",
-    "price": 249,
-    "originalPrice": 349,
-    "currency": "INR",
-    "images": [
-      "/images/products/charcoal-face-wash.svg"
-    ],
-    "rating": 4.2,
-    "reviewCount": 1540,
-    "stock": 150,
-    "sku": "CC-FW-010",
-    "tags": [
-      "face wash",
-      "charcoal",
-      "oily skin",
-      "beauty"
-    ],
-    "isFeatured": false,
-    "isNew": false,
-    "specifications": [
-      {
-        "name": "Volume",
-        "value": "100 ml (3.38 fl oz)",
-        "group": "General"
-      },
-      {
-        "name": "Key Ingredients",
-        "value": "Activated Bamboo Charcoal, Tea Tree Oil, Aloe Vera",
-        "group": "Formula"
-      },
-      {
-        "name": "Skin Type",
-        "value": "Oily, Combination & Pollution-Exposed Skin",
-        "group": "Usage"
-      },
-      {
-        "name": "Formula Features",
-        "value": "Sulfate-Free, Soap-Free, Non-Drying",
-        "group": "Safety"
-      }
-    ],
-    "highlights": [
-      "Deep Pore Detox with Bamboo Charcoal",
-      "Controls Excess Oil & Mattifies",
-      "Tea Tree Oil Anti-Acne Action",
-      "Gentle Daily Cleanser"
-    ],
-    "warranty": "100% Authentic Product Guarantee"
-  },
-  {
-    "id": "prod-11",
-    "slug": "adjustable-dumbbell-pair",
-    "name": "Adjustable Dumbbell Pair 2–20 kg",
-    "brand": "IronGrip",
-    "categoryId": "cat-05",
-    "shortDescription": "Dial-select dumbbells replacing a full rack of weights in seconds.",
-    "description": "IronGrip's dial-select system lets you switch from 2 kg to 20 kg in 2-kg increments with a simple twist — no more fumbling with loose plates. Anti-roll base and textured chrome handle provide a secure grip. Each dumbbell replaces 10 separate weights; the included storage tray keeps your space tidy. Suitable for all major muscle groups.",
-    "price": 8999,
-    "originalPrice": 12499,
-    "currency": "INR",
-    "images": [
-      "/images/products/adjustable-dumbbells.svg"
+      "/images/placeholder.svg"
     ],
     "rating": 4.8,
-    "reviewCount": 672,
-    "stock": 18,
-    "sku": "IG-DB-011",
+    "reviewCount": 0,
+    "stock": 20,
+    "sku": "SS-PUR-006",
     "tags": [
-      "dumbbells",
-      "weights",
-      "home gym",
-      "fitness",
-      "sports"
+      "latex-free",
+      "polyurethane",
+      "ultra-thin",
+      "premium"
     ],
     "isFeatured": true,
-    "isNew": false,
-    "specifications": [
-      {
-        "name": "Weight Range",
-        "value": "2 kg to 20 kg per dumbbell (Adjustable)",
-        "group": "Dimensions & Weight"
-      },
-      {
-        "name": "Material",
-        "value": "Precision Steel Plates with Cast Iron Core",
-        "group": "Material"
-      },
-      {
-        "name": "Handle",
-        "value": "Textured Anti-Slip Knurled Steel Grip",
-        "group": "Design"
-      },
-      {
-        "name": "Mechanism",
-        "value": "Quick Dial-Weight Locking System",
-        "group": "Mechanism"
-      }
-    ],
-    "highlights": [
-      "Replaces 10 Sets of Individual Dumbbells",
-      "Quick 1-Second Weight Turn Dial",
-      "Compact Space-Saving Home Gym Design",
-      "Commercial-Grade Heavy Steel Plates"
-    ],
-    "warranty": "2-Year Manufacturer Hardware Warranty"
-  },
-  {
-    "id": "prod-12",
-    "slug": "yoga-mat-6mm-tpe",
-    "name": "Eco TPE Yoga Mat 6 mm",
-    "brand": "ZenFlex",
-    "categoryId": "cat-05",
-    "shortDescription": "Non-slip, eco-friendly TPE yoga mat with alignment lines and carry strap.",
-    "description": "ZenFlex's TPE mat is free from PVC, latex, and toxic dyes, making it safe for skin contact and kind to the environment. The dual-texture surface provides firm grip on hardwood and tile floors while the closed-cell foam prevents moisture absorption and bacterial growth. Alignment lines guide posture for beginners and advanced practitioners alike. Includes carry strap.",
-    "price": 999,
-    "originalPrice": 1499,
-    "currency": "INR",
-    "images": [
-      "/images/products/yoga-mat.svg"
-    ],
-    "rating": 4.6,
-    "reviewCount": 2289,
-    "stock": 55,
-    "sku": "ZF-YM-012",
-    "tags": [
-      "yoga",
-      "mat",
-      "fitness",
-      "eco",
-      "sports"
-    ],
-    "isFeatured": false,
     "isNew": true,
+    "demoOnly": true,
     "specifications": [
       {
-        "name": "Thickness",
-        "value": "6 mm High-Density Cushioning",
-        "group": "Dimensions"
-      },
-      {
-        "name": "Dimensions",
-        "value": "183 cm x 61 cm (72\" x 24\")",
-        "group": "Dimensions"
-      },
-      {
         "name": "Material",
-        "value": "Eco-Friendly TPE (Thermoplastic Elastomer)",
-        "group": "Material"
+        "value": "Thermoplastic Polyurethane",
+        "group": "Material & Build"
       },
       {
-        "name": "Features",
-        "value": "Double-Sided Non-Slip Texture, Alignment Lines",
+        "name": "Nominal Width",
+        "value": "55mm",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Characteristics",
+        "value": "Odorless, Transparent, High Heat Conductivity",
         "group": "Features"
       }
     ],
     "highlights": [
-      "6mm Joint-Protective High Density Cushion",
-      "Dual-Sided Non-Slip Grip on Any Floor",
-      "100% Eco-Friendly Non-Toxic TPE",
-      "Includes Carry Strap"
+      "Ultra-thin polyurethane construction",
+      "Compatible with both water and silicone lubricants",
+      "Odorless and transparent"
     ],
-    "warranty": "1-Year Quality Replacement"
+    "warranty": "Standard return within 7 days if seals are unbroken."
+  },
+  {
+    "id": "prod-09",
+    "slug": "hydroglide-pure-water-based-lubricant",
+    "name": "HydroGlide Natural Water-Based Personal Gel",
+    "brand": "HydroGlide",
+    "categoryId": "cat-05",
+    "shortDescription": "Pure, non-greasy, water-soluble personal gel for smooth glide and comfort.",
+    "description": "HydroGlide is formulated with pH-balanced ingredients to supplement natural moisture and reduce friction. Rinses clean with water and is fully compatible with natural latex and polyisoprene protection. (Prototype Demo Fixture).",
+    "price": 349,
+    "originalPrice": 449,
+    "currency": "INR",
+    "images": [
+      "/images/placeholder.svg"
+    ],
+    "rating": 4.6,
+    "reviewCount": 0,
+    "stock": 50,
+    "sku": "HG-WBG-100",
+    "tags": [
+      "lubricant",
+      "water-based",
+      "condom-compatible",
+      "comfort"
+    ],
+    "isFeatured": true,
+    "isNew": false,
+    "demoOnly": true,
+    "variants": [
+      {
+        "type": "size",
+        "label": "100 ml Pump",
+        "value": "100ml",
+        "stock": 30,
+        "sku": "HG-WBG-100",
+        "price": 349,
+        "originalPrice": 449
+      },
+      {
+        "type": "size",
+        "label": "200 ml Value Pack",
+        "value": "200ml",
+        "stock": 20,
+        "sku": "HG-WBG-200",
+        "price": 549,
+        "originalPrice": 799
+      }
+    ],
+    "specifications": [
+      {
+        "name": "Base Formula",
+        "value": "Water-based (Aqueous)",
+        "group": "Composition"
+      },
+      {
+        "name": "Volume",
+        "value": "100ml / 200ml",
+        "group": "Volume"
+      },
+      {
+        "name": "Compatibility",
+        "value": "Latex, Polyisoprene, Silicone",
+        "group": "Usage"
+      }
+    ],
+    "highlights": [
+      "pH-balanced, water-soluble formulation",
+      "100% Condom-compatible (Latex & Polyisoprene)",
+      "Non-staining and easily washable"
+    ],
+    "warranty": "Replaceable if pump mechanism or protective seal is damaged on arrival."
+  },
+  {
+    "id": "prod-10",
+    "slug": "hydroglide-aloe-vera-moisturizing-gel",
+    "name": "HydroGlide Aloe Vera Soothing Intimate Gel",
+    "brand": "HydroGlide",
+    "categoryId": "cat-05",
+    "shortDescription": "Enriched with botanical aloe vera for soothing hydration and lasting comfort.",
+    "description": "A gentle intimate gel designed with moisturizing aloe extracts. Dermatologically evaluated for skin tolerance with zero added artificial fragrances. (Prototype Demo Fixture).",
+    "price": 399,
+    "originalPrice": 499,
+    "currency": "INR",
+    "images": [
+      "/images/placeholder.svg"
+    ],
+    "rating": 4.5,
+    "reviewCount": 0,
+    "stock": 35,
+    "sku": "HG-ALO-100",
+    "tags": [
+      "lubricant",
+      "aloe-vera",
+      "soothing",
+      "intimate-care"
+    ],
+    "isFeatured": false,
+    "isNew": true,
+    "demoOnly": true,
+    "specifications": [
+      {
+        "name": "Base Formula",
+        "value": "Water-based with Aloe Barbadensis Extract",
+        "group": "Composition"
+      },
+      {
+        "name": "Volume",
+        "value": "100ml",
+        "group": "Volume"
+      },
+      {
+        "name": "Compatibility",
+        "value": "Safe with natural rubber latex and polyisoprene",
+        "group": "Usage"
+      }
+    ],
+    "highlights": [
+      "Infused with natural aloe vera extract",
+      "Glycerin-free & paraben-free demo formula",
+      "Compatible with all standard protection materials"
+    ],
+    "warranty": "Replaceable if protective seal is damaged on arrival."
   }
 ]

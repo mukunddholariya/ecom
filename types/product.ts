@@ -1,10 +1,20 @@
 /** Prices are stored in RUPEES (not paise). See lib/format.ts for convention. */
 
+export interface ProductSpecification {
+  name: string
+  value: string
+  group?: string
+}
+
 export interface ProductVariant {
-  type: "size" | "color"
-  label: string // e.g. "Large", "Midnight Black"
-  value: string // e.g. "L", "#1a1a1a"
+  type: "size" | "color" | "pack"
+  label: string // e.g. "Pack of 10", "100ml"
+  value: string // e.g. "10", "100ml"
   stock: number
+  sku?: string
+  price?: number
+  originalPrice?: number
+  image?: string
 }
 
 export interface Product {
@@ -30,5 +40,9 @@ export interface Product {
   tags: string[]
   isFeatured: boolean
   isNew: boolean
+  demoOnly?: boolean
   variants?: ProductVariant[]
+  highlights?: string[]
+  specifications?: ProductSpecification[]
+  warranty?: string
 }

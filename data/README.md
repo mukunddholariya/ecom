@@ -8,18 +8,19 @@
 ## Files
 
 1. **`products.json`**
-   - 12 realistic dummy products spanning 5 distinct categories.
-   - Includes IDs (`prod-01` to `prod-12`), unique slugs, descriptions, stock counts, SKUs, tags, and ratings.
-   - Prices are integers representing Indian Rupees (INR) (e.g. `2999` = ₹2,999).
-   - Some products include realistic variants (e.g. color hex codes or sizes).
-   - Images use `https://placehold.co/...` placeholders configured in `next.config.ts`.
+   - 10 targeted fictional dummy products for sexual protection and intimate wellness across 5 categories.
+   - Includes IDs (`prod-01` to `prod-10`), unique slugs, neutral descriptions, stock counts, SKUs, tags, and synthetic demo reviews.
+   - All items are marked with `demoOnly: true`. Specifications, dimensions, and materials are synthetic developer fixtures for layout testing and must be replaced with verified manufacturer data before commercial launch.
+   - Prices are integers representing Indian Rupees (INR) (e.g. `349` = ₹349).
+   - Several products include pack-size or volume variants (`Pack of 10`, `Pack of 20`, `100ml`, `200ml`).
+   - Images use local project fallbacks (`/images/placeholder.svg`).
 
 2. **`categories.json`**
-   - 5 core product categories: Electronics, Fashion, Home & Kitchen, Beauty & Care, Sports & Fitness.
-   - Includes category IDs (`cat-01` to `cat-05`), slugs, and Lucide icon mappings.
+   - 5 target categories: Ultra Thin (`cat-01`), Textured & Ribbed (`cat-02`), Flavoured (`cat-03`), Latex-Free (`cat-04`), Lubricants & Gels (`cat-05`).
+   - Includes category IDs (`cat-01` to `cat-05`), slugs, and Lucide icon mappings (`shield`, `sparkles`, `heart`, `leaf`, `droplets`).
 
 3. **`banners.json`**
-   - 3 homepage marketing hero banners with CTAs, theme settings, and targeted category links.
+   - 3 homepage hero banners with respectful, mainstream intimate protection and wellness CTAs, theme settings, and category links.
 
 4. **`mock-users.json`**
    - 2 fictional demo test users (`user-01`, `user-02`).

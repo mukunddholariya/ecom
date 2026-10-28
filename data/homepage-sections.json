@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sec-categories",
+    "type": "category_strip",
+    "enabled": true
+  },
+  {
+    "id": "sec-hero",
+    "type": "hero_banner",
+    "enabled": true
+  },
+  {
+    "id": "sec-benefits",
+    "type": "benefits_strip",
+    "enabled": true
+  },
+  {
+    "id": "sec-featured",
+    "type": "featured_products",
+    "enabled": true,
+    "title": "Featured Essentials & Favourites",
+    "subtitle": "Top rated protection and personal wellness items selected for quality and reliability",
+    "viewAllHref": "/products",
+    "viewAllLabel": "View all products"
+  },
+  {
+    "id": "sec-spotlight",
+    "type": "spotlight",
+    "enabled": true,
+    "spotlight": {
+      "badge": "Curated Spotlight",
+      "title": "Bare Sensitivity & Pure Comfort",
+      "description": "Explore featherlight natural latex protection and condom-compatible water gels crafted for reliable peace of mind.",
+      "ctaText": "Explore Ultra Thin",
+      "ctaHref": "/products?category=ultra-thin"
+    }
+  },
+  {
+    "id": "sec-new-arrivals",
+    "type": "new_arrivals",
+    "enabled": true,
+    "title": "New Arrivals",
+    "subtitle": "The latest polyisoprene, textured, and flavoured varieties just added to the store",
+    "viewAllHref": "/products",
+    "viewAllLabel": "Explore new items"
+  },
+  {
+    "id": "sec-notice",
+    "type": "prototype_notice",
+    "enabled": true
+  }
+]
