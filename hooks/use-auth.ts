@@ -6,6 +6,7 @@
  * Replace this with a proper auth solution before production.
  */
 
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
 import { getMockUserByEmail, getMockUserByPhone } from "@/lib/data"
 import {
   getStorage,
@@ -14,7 +15,16 @@ import {
   STORAGE_KEYS,
 } from "@/lib/storage"
 import type { MockSession } from "@/types/user"
-import { useCallback, useEffect, useState } from "react"
+
+const emptySubscribe = () => () => {}
+
+function useIsMounted() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  )
+}
 
 interface AuthActions {
   /**
@@ -29,34 +39,41 @@ interface AuthActions {
 interface UseAuthReturn extends AuthActions {
   session: MockSession | null
   isSignedIn: boolean
+  isLoaded: boolean
 }
 
 export function useAuth(): UseAuthReturn {
+  const isLoaded = useIsMounted()
   const [session, setSession] = useState<MockSession | null>(() => {
     return getStorage<MockSession>(STORAGE_KEYS.SESSION)
   })
 
   useEffect(() => {
+    if (!isLoaded) return
     if (session) {
       setStorage(STORAGE_KEYS.SESSION, session)
     } else {
       removeStorage(STORAGE_KEYS.SESSION)
     }
-  }, [session])
+  }, [session, isLoaded])
 
   const verifyOtp = useCallback((identifier: string, otp: string): boolean => {
-    // Try phone then email
+    // Fixed demo OTP for local prototype
+    if (otp !== "123456") return false
+
+    // Try finding existing mock fixture user by phone or email
+    const trimmed = identifier.trim()
     const user =
-      getMockUserByPhone(identifier) ?? getMockUserByEmail(identifier)
+      getMockUserByPhone(trimmed) ?? getMockUserByEmail(trimmed.toLowerCase())
 
-    if (!user || user.otp !== otp) return false
-
+    const isEmail = trimmed.includes("@")
     const newSession: MockSession = {
-      userId: user.id,
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
+      userId: user?.id ?? `user-${Date.now().toString(36)}`,
+      name: user?.name ?? (isEmail ? trimmed.split("@")[0] : `Shopper ${trimmed.slice(-4)}`),
+      email: user?.email ?? (isEmail ? trimmed.toLowerCase() : `${trimmed}@demo.store`),
+      phone: user?.phone ?? (isEmail ? "9876543210" : trimmed),
     }
+
     setSession(newSession)
     return true
   }, [])
@@ -65,9 +82,12 @@ export function useAuth(): UseAuthReturn {
     setSession(null)
   }, [])
 
+  const activeSession = isLoaded ? session : null
+
   return {
-    session,
-    isSignedIn: session !== null,
+    session: activeSession,
+    isSignedIn: activeSession !== null,
+    isLoaded,
     verifyOtp,
     signOut,
   }

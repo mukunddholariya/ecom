@@ -51,7 +51,7 @@ export function ProductGallery({
           {safeImages.map((img, idx) => {
             const isSelected = idx === selectedIndex
             const thumbSrc = imageError[idx]
-              ? `https://placehold.co/120x120/0f333a/ffffff?text=${idx + 1}`
+              ? "/images/placeholder.svg"
               : img
 
             return (

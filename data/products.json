@@ -38,7 +38,41 @@
         "value": "#f5f5f5",
         "stock": 15
       }
-    ]
+    ],
+    "specifications": [
+      {
+        "name": "Battery Life",
+        "value": "40 Hours (Case) / 10 Hours (Buds)",
+        "group": "Audio & Power"
+      },
+      {
+        "name": "Active Noise Cancellation",
+        "value": "Up to 35 dB ANC",
+        "group": "Audio & Power"
+      },
+      {
+        "name": "Bluetooth Version",
+        "value": "5.3 with AAC/SBC codec",
+        "group": "Connectivity"
+      },
+      {
+        "name": "Water Resistance",
+        "value": "IPX5 Sweat & Water Resistant",
+        "group": "Build & Protection"
+      },
+      {
+        "name": "Microphones",
+        "value": "6-Mic Environmental Noise Cancellation",
+        "group": "Audio & Power"
+      }
+    ],
+    "highlights": [
+      "Active Noise Cancellation up to 35dB",
+      "40 Hours Total Playback",
+      "IPX5 Sweat & Splash Proof",
+      "Fast 10-Min Charge for 2 Hours Sound"
+    ],
+    "warranty": "1 Year Manufacturer Replacement Warranty"
   },
   {
     "id": "prod-02",
@@ -80,7 +114,41 @@
         "value": "#b5838d",
         "stock": 10
       }
-    ]
+    ],
+    "specifications": [
+      {
+        "name": "Display",
+        "value": "1.43\" AMOLED 466x466 px (1000 nits)",
+        "group": "Display"
+      },
+      {
+        "name": "Battery Life",
+        "value": "Up to 7 Days (Typical Usage)",
+        "group": "Power"
+      },
+      {
+        "name": "Health Sensors",
+        "value": "Optical Heart Rate, SpO2, Sleep Monitor",
+        "group": "Sensors"
+      },
+      {
+        "name": "Water Resistance",
+        "value": "5 ATM (50m Waterproof)",
+        "group": "Build & Protection"
+      },
+      {
+        "name": "Compatibility",
+        "value": "Android 8.0+ and iOS 12.0+",
+        "group": "Connectivity"
+      }
+    ],
+    "highlights": [
+      "1.43\" Always-On AMOLED Display",
+      "24/7 Heart Rate & SpO2 Tracking",
+      "100+ Professional Sport Modes",
+      "5 ATM Water Resistance"
+    ],
+    "warranty": "1 Year Brand Warranty"
   },
   {
     "id": "prod-03",
@@ -108,7 +176,36 @@
       "electronics"
     ],
     "isFeatured": false,
-    "isNew": false
+    "isNew": false,
+    "specifications": [
+      {
+        "name": "Ports",
+        "value": "HDMI 4K@60Hz, 3x USB 3.0, SD, MicroSD, 100W PD",
+        "group": "Ports & Connectivity"
+      },
+      {
+        "name": "Power Delivery",
+        "value": "Pass-through USB-C 100W Fast Charge",
+        "group": "Power"
+      },
+      {
+        "name": "Material",
+        "value": "Aviation-Grade Anodized Aluminum",
+        "group": "Design"
+      },
+      {
+        "name": "Transfer Speeds",
+        "value": "Up to 5 Gbps Data Transfer",
+        "group": "Performance"
+      }
+    ],
+    "highlights": [
+      "7-in-1 Compact Connectivity",
+      "100W Power Delivery Pass-Through",
+      "Ultra-Sharp 4K@60Hz HDMI Output",
+      "Durable Aluminum Heat Dissipation"
+    ],
+    "warranty": "18 Months Extended Brand Warranty"
   },
   {
     "id": "prod-04",
@@ -168,7 +265,41 @@
         "value": "XXL",
         "stock": 5
       }
-    ]
+    ],
+    "specifications": [
+      {
+        "name": "Fabric",
+        "value": "Premium Linen-Cotton Blend (60% Linen, 40% Cotton)",
+        "group": "Material"
+      },
+      {
+        "name": "Fit",
+        "value": "Regular Comfort Fit",
+        "group": "Fit & Style"
+      },
+      {
+        "name": "Sleeve Length",
+        "value": "Full Sleeve with Roll-up Tab",
+        "group": "Fit & Style"
+      },
+      {
+        "name": "Wash Care",
+        "value": "Gentle Machine Wash in Cold Water",
+        "group": "Care"
+      },
+      {
+        "name": "Occasion",
+        "value": "Casual & Festive Wear",
+        "group": "General"
+      }
+    ],
+    "highlights": [
+      "Breathable Pure Linen Blend",
+      "Natural Texture & Rich Navy Hue",
+      "Mandarin Collar Styling",
+      "Side Pockets for Convenience"
+    ],
+    "warranty": "7-Day Easy Size Exchange & Return"
   },
   {
     "id": "prod-05",
@@ -227,7 +358,36 @@
         "value": "XL",
         "stock": 20
       }
-    ]
+    ],
+    "specifications": [
+      {
+        "name": "Fabric",
+        "value": "100% Combed Ringspun Cotton (180 GSM)",
+        "group": "Material"
+      },
+      {
+        "name": "Fit",
+        "value": "Relaxed Unisex Fit",
+        "group": "Fit & Style"
+      },
+      {
+        "name": "Print Type",
+        "value": "High-Density Screen Print",
+        "group": "Design"
+      },
+      {
+        "name": "Wash Care",
+        "value": "Machine wash warm, do not iron on print",
+        "group": "Care"
+      }
+    ],
+    "highlights": [
+      "100% Super-Combed 180 GSM Cotton",
+      "Pre-Shrunk Bio-Washed Finish",
+      "Durable Colorfast Screen Print",
+      "Ribbed Round Neck Collar"
+    ],
+    "warranty": "7-Day Easy Return Policy"
   },
   {
     "id": "prod-06",
@@ -286,7 +446,36 @@
         "value": "10",
         "stock": 7
       }
-    ]
+    ],
+    "specifications": [
+      {
+        "name": "Upper Material",
+        "value": "Breathable Mesh with Suede Overlays",
+        "group": "Material"
+      },
+      {
+        "name": "Sole",
+        "value": "High-Grip Thermoplastic Rubber (TPR)",
+        "group": "Performance"
+      },
+      {
+        "name": "Insole",
+        "value": "Memory Foam Cushioned Footbed",
+        "group": "Comfort"
+      },
+      {
+        "name": "Closure",
+        "value": "Lace-Up",
+        "group": "Fit & Style"
+      }
+    ],
+    "highlights": [
+      "Ergonomic Memory Foam Insole",
+      "Lightweight Shock-Absorbing Sole",
+      "Breathable Anti-Sweat Mesh",
+      "Versatile All-Day Comfort"
+    ],
+    "warranty": "3 Months Quality Guarantee"
   },
   {
     "id": "prod-07",
@@ -313,7 +502,41 @@
       "kitchen"
     ],
     "isFeatured": true,
-    "isNew": false
+    "isNew": false,
+    "specifications": [
+      {
+        "name": "Diameter",
+        "value": "28 cm (11 inches)",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Capacity",
+        "value": "3.5 Litres",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Material",
+        "value": "100% Pure Virgin Cast Iron",
+        "group": "Material"
+      },
+      {
+        "name": "Coating",
+        "value": "Pre-Seasoned with 100% Natural Vegetable Oil",
+        "group": "Finish"
+      },
+      {
+        "name": "Stove Compatibility",
+        "value": "Gas, Induction, Oven & Open Fire",
+        "group": "Compatibility"
+      }
+    ],
+    "highlights": [
+      "Naturally Non-Stick Pre-Seasoned Kadai",
+      "Enriches Food with Natural Dietary Iron",
+      "Heavy-Duty Heat Retention",
+      "100% Chemical-Free (No Teflon/PTFE)"
+    ],
+    "warranty": "5-Year Manufacturer Warranty"
   },
   {
     "id": "prod-08",
@@ -340,7 +563,36 @@
       "home"
     ],
     "isFeatured": false,
-    "isNew": true
+    "isNew": true,
+    "specifications": [
+      {
+        "name": "Material",
+        "value": "Natural Organically Treated Bamboo",
+        "group": "Material"
+      },
+      {
+        "name": "Set Includes",
+        "value": "Small (20cm), Medium (25cm), Large (30cm)",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Lining",
+        "value": "Removable Washable Linen Fabric Liner",
+        "group": "Design"
+      },
+      {
+        "name": "Eco Certification",
+        "value": "100% Biodegradable & Handwoven",
+        "group": "Sustainability"
+      }
+    ],
+    "highlights": [
+      "Set of 3 Nesting Storage Baskets",
+      "Natural Antibacterial Bamboo Weave",
+      "Removable Washable Fabric Liners",
+      "Multi-Purpose Organizer"
+    ],
+    "warranty": "1-Year Quality Replacement"
   },
   {
     "id": "prod-09",
@@ -367,7 +619,36 @@
       "beauty"
     ],
     "isFeatured": true,
-    "isNew": false
+    "isNew": false,
+    "specifications": [
+      {
+        "name": "Volume",
+        "value": "30 ml (1.01 fl oz)",
+        "group": "General"
+      },
+      {
+        "name": "Key Ingredients",
+        "value": "15% Ethyl Ascorbic Acid, Ferulic Acid, Hyaluronic Acid",
+        "group": "Formula"
+      },
+      {
+        "name": "Skin Type",
+        "value": "All Skin Types (Dermatologically Tested)",
+        "group": "Usage"
+      },
+      {
+        "name": "Formulation",
+        "value": "Cruelty-Free, Paraben-Free, Fragrance-Free",
+        "group": "Safety"
+      }
+    ],
+    "highlights": [
+      "15% Active Vitamin C for Radiant Glow",
+      "Boosts Collagen & Fades Dark Spots",
+      "Hydrating Triple-Weight Hyaluronic Acid",
+      "Lightweight Fast-Absorbing Texture"
+    ],
+    "warranty": "100% Authentic Product Guarantee"
   },
   {
     "id": "prod-10",
@@ -394,7 +675,36 @@
       "beauty"
     ],
     "isFeatured": false,
-    "isNew": false
+    "isNew": false,
+    "specifications": [
+      {
+        "name": "Volume",
+        "value": "100 ml (3.38 fl oz)",
+        "group": "General"
+      },
+      {
+        "name": "Key Ingredients",
+        "value": "Activated Bamboo Charcoal, Tea Tree Oil, Aloe Vera",
+        "group": "Formula"
+      },
+      {
+        "name": "Skin Type",
+        "value": "Oily, Combination & Pollution-Exposed Skin",
+        "group": "Usage"
+      },
+      {
+        "name": "Formula Features",
+        "value": "Sulfate-Free, Soap-Free, Non-Drying",
+        "group": "Safety"
+      }
+    ],
+    "highlights": [
+      "Deep Pore Detox with Bamboo Charcoal",
+      "Controls Excess Oil & Mattifies",
+      "Tea Tree Oil Anti-Acne Action",
+      "Gentle Daily Cleanser"
+    ],
+    "warranty": "100% Authentic Product Guarantee"
   },
   {
     "id": "prod-11",
@@ -422,7 +732,36 @@
       "sports"
     ],
     "isFeatured": true,
-    "isNew": false
+    "isNew": false,
+    "specifications": [
+      {
+        "name": "Weight Range",
+        "value": "2 kg to 20 kg per dumbbell (Adjustable)",
+        "group": "Dimensions & Weight"
+      },
+      {
+        "name": "Material",
+        "value": "Precision Steel Plates with Cast Iron Core",
+        "group": "Material"
+      },
+      {
+        "name": "Handle",
+        "value": "Textured Anti-Slip Knurled Steel Grip",
+        "group": "Design"
+      },
+      {
+        "name": "Mechanism",
+        "value": "Quick Dial-Weight Locking System",
+        "group": "Mechanism"
+      }
+    ],
+    "highlights": [
+      "Replaces 10 Sets of Individual Dumbbells",
+      "Quick 1-Second Weight Turn Dial",
+      "Compact Space-Saving Home Gym Design",
+      "Commercial-Grade Heavy Steel Plates"
+    ],
+    "warranty": "2-Year Manufacturer Hardware Warranty"
   },
   {
     "id": "prod-12",
@@ -450,6 +789,35 @@
       "sports"
     ],
     "isFeatured": false,
-    "isNew": true
+    "isNew": true,
+    "specifications": [
+      {
+        "name": "Thickness",
+        "value": "6 mm High-Density Cushioning",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Dimensions",
+        "value": "183 cm x 61 cm (72\" x 24\")",
+        "group": "Dimensions"
+      },
+      {
+        "name": "Material",
+        "value": "Eco-Friendly TPE (Thermoplastic Elastomer)",
+        "group": "Material"
+      },
+      {
+        "name": "Features",
+        "value": "Double-Sided Non-Slip Texture, Alignment Lines",
+        "group": "Features"
+      }
+    ],
+    "highlights": [
+      "6mm Joint-Protective High Density Cushion",
+      "Dual-Sided Non-Slip Grip on Any Floor",
+      "100% Eco-Friendly Non-Toxic TPE",
+      "Includes Carry Strap"
+    ],
+    "warranty": "1-Year Quality Replacement"
   }
 ]

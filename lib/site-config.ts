@@ -5,7 +5,7 @@
  */
 export const siteConfig = {
   /** Display name of the store. Change here → updates everywhere. */
-  name: "ecom",
+  name: "edom",
   tagline: "Everything. Delivered.",
   description:
     "Shop the widest selection of electronics, fashion, home essentials, and more — all in one place.",

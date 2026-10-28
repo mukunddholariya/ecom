@@ -99,8 +99,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Persist to storage whenever cart changes after client mount
   useEffect(() => {
-    setStorage(STORAGE_KEYS.CART, cart)
-  }, [cart])
+    if (isLoaded) {
+      setStorage(STORAGE_KEYS.CART, cart)
+    }
+  }, [cart, isLoaded])
 
   const openCartSheet = useCallback(() => setIsCartSheetOpen(true), [])
   const closeCartSheet = useCallback(() => setIsCartSheetOpen(false), [])
@@ -188,11 +190,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart(EMPTY_CART)
   }, [])
 
-  const totals = useMemo(() => computeTotals(cart), [cart])
+  // Guard against hydration mismatch: only expose saved items once mounted
+  const exposedCart = isLoaded ? cart : EMPTY_CART
+  const totals = useMemo(() => computeTotals(exposedCart), [exposedCart])
 
   const contextValue = useMemo(
     () => ({
-      cart,
+      cart: exposedCart,
       totals,
       isLoaded,
       isCartSheetOpen,
@@ -205,7 +209,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       clearCart,
     }),
     [
-      cart,
+      exposedCart,
       totals,
       isLoaded,
       isCartSheetOpen,

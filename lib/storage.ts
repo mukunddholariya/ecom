@@ -52,7 +52,9 @@ export function removeStorage(key: string): void {
 
 /** Namespaced keys — change prefix here if the store is renamed. */
 export const STORAGE_KEYS = {
-  CART: "ecom:cart",
-  SESSION: "ecom:session",
-  RECENT_PRODUCTS: "ecom:recent_products",
+  CART: "edom:cart",
+  SESSION: "edom:session",
+  RECENT_PRODUCTS: "edom:recent_products",
+  ORDERS: "edom:orders",
+  ADDRESSES: "edom:addresses",
 } as const

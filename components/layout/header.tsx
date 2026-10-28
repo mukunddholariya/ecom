@@ -65,12 +65,24 @@ export function Header() {
         {/* Right controls */}
         <div className="ms-auto flex items-center gap-1">
           {/* Account */}
-          <Button variant="ghost" size="icon-sm" asChild>
+          <Button
+            variant="ghost"
+            size={isSignedIn ? "sm" : "icon-sm"}
+            asChild
+            className={cn(
+              isSignedIn && "gap-1.5 px-2.5 text-xs font-semibold text-primary"
+            )}
+          >
             <Link
               href={isSignedIn ? "/account" : "/login"}
               aria-label={isSignedIn ? `Account: ${session?.name}` : "Login"}
             >
-              <User className="size-5" />
+              <User className="size-4" />
+              {isSignedIn && (
+                <span className="hidden sm:inline max-w-24 truncate">
+                  {session?.name.split(" ")[0]}
+                </span>
+              )}
             </Link>
           </Button>
 
